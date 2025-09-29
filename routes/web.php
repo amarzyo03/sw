@@ -6,6 +6,7 @@ use App\Http\Controllers\siswaController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\userSiswaController;
 use App\Http\Controllers\authController;
+use App\Http\Controllers\penilaianGanjilController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -21,7 +22,7 @@ Route::middleware(['adminAuth'])->group(function () {
     Route::get('/siswa/{id}/delete', [siswaController::class, 'destroy']);
     Route::get('/logout', [authController::class, 'logout']);
 
-    Route::get('/penilaian-ganjil', [App\Http\Controllers\penilaianGanjilController::class, 'index']);
+    Route::get('/penilaian-ganjil', [penilaianGanjilController::class, 'index']);
 });
 
 
