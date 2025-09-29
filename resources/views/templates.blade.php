@@ -89,7 +89,7 @@
                         </svg> Penilaian</a>
                     <ul class="nav-group-items compact">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="/">
                                 <span class="nav-icon">
                                     <span class="nav-icon-bullet"></span>
                                 </span> Nilai Murni PSTS Ganjil
