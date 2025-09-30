@@ -12,7 +12,7 @@ use App\Http\Controllers\penilaianGanjilController;
 //     return view('welcome');
 // });
 
-
+######################### Admin Page ###########################
 Route::get('/', [authController::class, 'login']);
 Route::post('/attemp-login', [authController::class, 'attempLogin']);
 
@@ -21,11 +21,11 @@ Route::middleware(['adminAuth'])->group(function () {
     Route::resource('siswa', siswaController::class);
     Route::get('/siswa/{id}/delete', [siswaController::class, 'destroy']);
     Route::get('/logout', [authController::class, 'logout']);
-
-    Route::get('/penilaian-ganjil', [penilaianGanjilController::class, 'index']);
 });
 
 
+
+######################## User Siswa Page ########################
 Route::get('/user-siswa/login', [userSiswaController::class, 'login']);
 Route::post('/user-siswa/attemp-login', [userSiswaController::class, 'attempLogin']);
 

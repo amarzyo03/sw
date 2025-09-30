@@ -89,7 +89,7 @@
                         </svg> Penilaian</a>
                     <ul class="nav-group-items compact">
                         <li class="nav-item">
-                            <a class="nav-link" href="/">
+                            <a class="nav-link" href="/psts-ganjil">
                                 <span class="nav-icon">
                                     <span class="nav-icon-bullet"></span>
                                 </span> Nilai Murni PSTS Ganjil
@@ -109,6 +109,14 @@
                         <svg class="nav-icon">
                             <use xlink:href="/node_modules/free.svg#cil-user"></use>
                         </svg> Profile
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/user-siswa/show">
+                        <svg class="nav-icon">
+                            <use xlink:href="/node_modules/free.svg#cil-user"></use>
+                        </svg> Nilai PSTS Ganjil
                     </a>
                 </li>
             @endif
