@@ -64,7 +64,7 @@
 
         <ul class="sidebar-nav" data-coreui="navigation" data-simplebar>
             <li class="nav-item">
-                <a class="nav-link" href="/user-siswa/dashboard">
+                <a class="nav-link" href="{{ session()->has('admin_id') ? '/dashboard' : '/user-siswa/dashboard' }}">
                     <svg class="nav-icon">
                         <use xlink:href="/node_modules/free.svg#cil-speedometer"></use>
                     </svg> Dashboard
@@ -83,19 +83,111 @@
                     </a>
                 </li>
 
+                <li class="nav-title">PENILAIAN GANJIL</li>
+
                 <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
                         <svg class="nav-icon">
                             <use xlink:href="node_modules/free.svg#cil-book"></use>
-                        </svg> Penilaian</a>
+                        </svg>PSTS</a>
                     <ul class="nav-group-items compact">
                         <li class="nav-item">
                             <a class="nav-link" href="/psts-ganjil">
                                 <span class="nav-icon">
                                     <span class="nav-icon-bullet"></span>
-                                </span> Nilai Murni PSTS Ganjil
+                                </span> Nilai Murni
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/psts-ganjil">
+                                <span class="nav-icon">
+                                    <span class="nav-icon-bullet"></span>
+                                </span> DAFTAR NILAI
                             </a>
                         </li>
                     </ul>
+                </li>
+                <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+                        <svg class="nav-icon">
+                            <use xlink:href="node_modules/free.svg#cil-book"></use>
+                        </svg>PSAS</a>
+                    <ul class="nav-group-items compact">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/psts-ganjil">
+                                <span class="nav-icon">
+                                    <span class="nav-icon-bullet"></span>
+                                </span> Nilai Murni
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/psts-ganjil">
+                                <span class="nav-icon">
+                                    <span class="nav-icon-bullet"></span>
+                                </span> DAFTAR NILAI
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-title">PENILAIAN GENAP</li>
+
+                <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+                        <svg class="nav-icon">
+                            <use xlink:href="node_modules/free.svg#cil-book"></use>
+                        </svg>PSTS</a>
+                    <ul class="nav-group-items compact">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/psts-ganjil">
+                                <span class="nav-icon">
+                                    <span class="nav-icon-bullet"></span>
+                                </span> Nilai Murni
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/psts-ganjil">
+                                <span class="nav-icon">
+                                    <span class="nav-icon-bullet"></span>
+                                </span> DAFTAR NILAI
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+                        <svg class="nav-icon">
+                            <use xlink:href="node_modules/free.svg#cil-book"></use>
+                        </svg>PSAS</a>
+                    <ul class="nav-group-items compact">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/psts-ganjil">
+                                <span class="nav-icon">
+                                    <span class="nav-icon-bullet"></span>
+                                </span> Nilai Murni
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/psts-ganjil">
+                                <span class="nav-icon">
+                                    <span class="nav-icon-bullet"></span>
+                                </span> DAFTAR NILAI
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-title">RAPORT</li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <svg class="nav-icon">
+                            <use xlink:href="/node_modules/free.svg#cil-user"></use>
+                        </svg> GANJIL
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <svg class="nav-icon">
+                            <use xlink:href="/node_modules/free.svg#cil-user"></use>
+                        </svg> GENAP
+                    </a>
                 </li>
             @endif
             {{-- End user admin --}}

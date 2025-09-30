@@ -1,4 +1,4 @@
-@extends('templates');
+@extends('templates')
 @section('content')
     <div class="card">
         <div class="card-header">
