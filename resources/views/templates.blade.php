@@ -115,7 +115,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/user-siswa/show">
                         <svg class="nav-icon">
-                            <use xlink:href="/node_modules/free.svg#cil-user"></use>
+                            <use xlink:href="/node_modules/free.svg#cil-book"></use>
                         </svg> Nilai PSTS Ganjil
                     </a>
                 </li>
