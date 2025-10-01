@@ -3,22 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\mapelModel;
-use App\Models\siswaModel;
 use Illuminate\Http\Request;
 
-class ganjilMurniController extends Controller
+class mapelController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $data = [
-            'colspan'   => mapelModel::count(),
-            'mapel'     => mapelModel::all(),
-            'siswa'     => siswaModel::all()
-        ];
-        return view('ganjil-murni.index', compact('data'));
+        $mapel = mapelModel::all();
+        return view('mapel.index', compact('mapel'));
     }
 
     /**
@@ -26,7 +21,7 @@ class ganjilMurniController extends Controller
      */
     public function create()
     {
-        //
+        return view('mapel.create');
     }
 
     /**
@@ -34,7 +29,8 @@ class ganjilMurniController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        mapelModel::create($request->all());
+        return redirect()->route('mapel.index');
     }
 
     /**
@@ -50,7 +46,8 @@ class ganjilMurniController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $mapel = mapelModel::findOrFail($id);
+        return view('mapel.edit', compact('mapel'));
     }
 
     /**
@@ -58,7 +55,13 @@ class ganjilMurniController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $mapel = mapelModel::findorFail($id);
+        $mapel->nama = $request->nama;
+        $mapel->singkatan = $request->singkatan;
+        $mapel->guru = $request->guru;
+        $mapel->save();
+
+        return redirect()->route('mapel.index');
     }
 
     /**
@@ -66,6 +69,7 @@ class ganjilMurniController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        mapelModel::findOrFail($id)->delete();
+        return redirect()->route('mapel.index');
     }
 }

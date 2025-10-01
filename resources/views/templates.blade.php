@@ -83,6 +83,14 @@
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('mapel.index') }}">
+                        <svg class="nav-icon">
+                            <use xlink:href="/node_modules/free.svg#cil-book"></use>
+                        </svg> Mapel
+                    </a>
+                </li>
+
                 <li class="nav-title">PENILAIAN GANJIL</li>
 
                 <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">

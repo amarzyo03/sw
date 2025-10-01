@@ -21,7 +21,7 @@
                         <th scope="col">NIS</th>
                         <th scope="col">NAMA</th>
                         <th scope="col">Telp</th>
-                        <th scope="col">---</th>
+                        <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
