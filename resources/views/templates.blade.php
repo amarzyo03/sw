@@ -91,7 +91,7 @@
                         </svg>PSTS</a>
                     <ul class="nav-group-items compact">
                         <li class="nav-item">
-                            <a class="nav-link" href="/psts-ganjil">
+                            <a class="nav-link" href="/ganjil-murni">
                                 <span class="nav-icon">
                                     <span class="nav-icon-bullet"></span>
                                 </span> Nilai Murni
