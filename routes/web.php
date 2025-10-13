@@ -6,7 +6,6 @@ use App\Http\Controllers\siswaController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\userSiswaController;
 use App\Http\Controllers\authController;
-use App\Http\Controllers\ganjilMurniController;
 use App\Http\Controllers\mapelController;
 
 // Route::get('/', function () {
@@ -27,9 +26,6 @@ Route::middleware(['adminAuth'])->group(function () {
 
     // mapel
     Route::resource('mapel', mapelController::class);
-
-    // penilaian ganjil
-    Route::resource('ganjil-murni', ganjilMurniController::class);
 });
 
 

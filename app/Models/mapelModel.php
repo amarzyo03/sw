@@ -9,4 +9,9 @@ class mapelModel extends Model
     protected $table = 'mapel';
     protected $primaryKey = 'id';
     protected $guarded = ['id', 'created_at', 'updated_at'];
+
+    public function nilai()
+    {
+        return $this->hasMany(nilaiModel::class);
+    }
 }
