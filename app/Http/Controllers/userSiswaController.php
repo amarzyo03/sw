@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\nilaiMurniPSTSGanjilModel;
 use Illuminate\Http\Request;
 use App\Models\siswaModel;
 use Illuminate\Support\Facades\Hash;
@@ -98,5 +99,13 @@ class userSiswaController extends Controller
         $siswa->save();
 
         return redirect()->to('/user-siswa/show');
+    }
+
+    // ############################### //
+    public function nilaiMurniPSTSGanjil()
+    {
+        $id = session('siswa_id');
+        $nilai = nilaiMurniPSTSGanjilModel::with('siswa')->findOrFail($id);
+        return view('user-siswa.nilai-murni-psts-ganjil', compact('nilai'));
     }
 }

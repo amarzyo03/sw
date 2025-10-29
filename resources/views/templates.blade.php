@@ -205,7 +205,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/user-siswa/show">
+                    <a class="nav-link" href="/user-siswa/nilai-murni-psts-ganjil">
                         <svg class="nav-icon">
                             <use xlink:href="/node_modules/free.svg#cil-book"></use>
                         </svg> Nilai PSTS Ganjil
@@ -217,7 +217,7 @@
         </ul>
 
         <div class="sidebar-footer border-top d-none d-md-flex">
-            <span>Login as: adhiz</span>
+            <a href="/logout" class="btn btn-sm btn-danger w-100 text-white">Logout</a>
         </div>
 
     </div>
