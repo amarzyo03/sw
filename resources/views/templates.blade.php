@@ -83,14 +83,6 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('mapel.index') }}">
-                        <svg class="nav-icon">
-                            <use xlink:href="/node_modules/free.svg#cil-book"></use>
-                        </svg> Mapel
-                    </a>
-                </li>
-
                 <li class="nav-title">PENILAIAN GANJIL</li>
 
                 <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
@@ -99,7 +91,7 @@
                         </svg>PSTS</a>
                     <ul class="nav-group-items compact">
                         <li class="nav-item">
-                            <a class="nav-link" href="/ganjil-murni">
+                            <a class="nav-link" href="/nilai-murni-psts-ganjil">
                                 <span class="nav-icon">
                                     <span class="nav-icon-bullet"></span>
                                 </span> Nilai Murni

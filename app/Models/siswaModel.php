@@ -10,8 +10,8 @@ class siswaModel extends Model
     protected $primaryKey = 'id';
     protected $guarded = ['id', 'created_at', 'updated_at'];
 
-    public function nilai()
+    public function nilaiMurniPSTSGanjil()
     {
-        return $this->hasMany(nilaiModel::class);
+        return $this->hasMany(nilaiMurniPSTSGanjilModel::class, 'siswa_id', 'id');
     }
 }

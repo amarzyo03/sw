@@ -7,6 +7,7 @@ use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\userSiswaController;
 use App\Http\Controllers\authController;
 use App\Http\Controllers\mapelController;
+use App\Http\Controllers\nilaiMurniPSTSGanjilController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -24,8 +25,8 @@ Route::middleware(['adminAuth'])->group(function () {
     Route::resource('siswa', siswaController::class);
     Route::get('/siswa/{id}/delete', [siswaController::class, 'destroy']);
 
-    // mapel
-    Route::resource('mapel', mapelController::class);
+    // Nilai Murni PSTS
+    Route::resource('nilai-murni-psts-ganjil', nilaiMurniPSTSGanjilController::class);
 });
 
 

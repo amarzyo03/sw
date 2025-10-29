@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('nisn')->nullable();
             $table->string('nis')->nullable();
-            $table->string('nik')->nullable();
             $table->string('nama');
             $table->string('jenis_kelamin')->nullable();
             $table->string('tempat_lahir')->nullable();

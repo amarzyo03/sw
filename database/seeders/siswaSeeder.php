@@ -25,8 +25,6 @@ class siswaSeeder extends Seeder
             'FALIH TIBYAN',
             'FERIKO YUSUF RAHARDI',
             'FERLITA MAYASARI',
-            'MAELAN SUDINA',
-            'MAELIN SUDINI',
             'MAYZENA JULIYANTI',
             'MIFTAH ADI SAPUTRA',
             'MIKA APRILIANI',
