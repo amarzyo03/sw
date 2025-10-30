@@ -13,7 +13,7 @@ class nilaiMurniPSTSGanjilController extends Controller
     public function index()
     {
         $nilaiMurniPSTSGanjil = nilaiMurniPSTSGanjilModel::with('siswa')->get();
-        return view('ganjil.psts.nilai_murni', compact('nilaiMurniPSTSGanjil'));
+        return view('ganjil.nilai_murni', compact('nilaiMurniPSTSGanjil'));
     }
 
     /**

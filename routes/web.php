@@ -25,6 +25,9 @@ Route::middleware(['adminAuth'])->group(function () {
     Route::resource('siswa', siswaController::class);
     Route::get('/siswa/{id}/delete', [siswaController::class, 'destroy']);
 
+    // Mapel
+    Route::resource('mapel', mapelController::class);
+
     // Nilai Murni PSTS
     Route::resource('nilai-murni-psts-ganjil', nilaiMurniPSTSGanjilController::class);
 });

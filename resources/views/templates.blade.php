@@ -73,16 +73,6 @@
 
             {{-- user admin --}}
             @if (session()->has('admin_id'))
-                <li class="nav-title">WORK</li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('siswa.index') }}">
-                        <svg class="nav-icon">
-                            <use xlink:href="/node_modules/free.svg#cil-user"></use>
-                        </svg> Siswa
-                    </a>
-                </li>
-
                 <li class="nav-title">PENILAIAN GANJIL</li>
 
                 <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
@@ -97,15 +87,9 @@
                                 </span> Nilai Murni
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/psts-ganjil">
-                                <span class="nav-icon">
-                                    <span class="nav-icon-bullet"></span>
-                                </span> DAFTAR NILAI
-                            </a>
-                        </li>
                     </ul>
                 </li>
+
                 <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
                         <svg class="nav-icon">
                             <use xlink:href="node_modules/free.svg#cil-book"></use>
@@ -118,14 +102,15 @@
                                 </span> Nilai Murni
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/psts-ganjil">
-                                <span class="nav-icon">
-                                    <span class="nav-icon-bullet"></span>
-                                </span> DAFTAR NILAI
-                            </a>
-                        </li>
                     </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <svg class="nav-icon">
+                            <use xlink:href="/node_modules/free.svg#cil-user"></use>
+                        </svg> RAPORT
+                    </a>
                 </li>
 
                 <li class="nav-title">PENILAIAN GENAP</li>
@@ -142,15 +127,9 @@
                                 </span> Nilai Murni
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/psts-ganjil">
-                                <span class="nav-icon">
-                                    <span class="nav-icon-bullet"></span>
-                                </span> DAFTAR NILAI
-                            </a>
-                        </li>
                     </ul>
                 </li>
+
                 <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
                         <svg class="nav-icon">
                             <use xlink:href="node_modules/free.svg#cil-book"></use>
@@ -173,20 +152,29 @@
                     </ul>
                 </li>
 
-                <li class="nav-title">RAPORT</li>
-
                 <li class="nav-item">
                     <a class="nav-link" href="#">
                         <svg class="nav-icon">
                             <use xlink:href="/node_modules/free.svg#cil-user"></use>
-                        </svg> GANJIL
+                        </svg> RAPORT
                     </a>
                 </li>
+
+                <li class="nav-title">MASTER</li>
+
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{{ route('siswa.index') }}">
                         <svg class="nav-icon">
                             <use xlink:href="/node_modules/free.svg#cil-user"></use>
-                        </svg> GENAP
+                        </svg> Siswa
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('mapel.index') }}">
+                        <svg class="nav-icon">
+                            <use xlink:href="/node_modules/free.svg#cil-user"></use>
+                        </svg> Mapel
                     </a>
                 </li>
             @endif

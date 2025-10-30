@@ -23,6 +23,9 @@
                             <th scope="col" rowspan="2">NISN</th>
                             <th scope="col" rowspan="2">Nama Siswa</th>
                             <th scope="col" colspan="16">Mata Pelajaran</th>
+                            <th scope="col" rowspan="2">Jumlah NIlai</th>
+                            <th scope="col" rowspan="2">Rata-Rata</th>
+                            <th scope="col" rowspan="2">Rank</th>
                         </tr>
                         <tr>
                             <th scope="col">AGM</th>
@@ -66,6 +69,44 @@
                                 <td scope="col">{{ $row->pdk3 }}</td>
                                 <td scope="col">{{ $row->pdk4 }}</td>
                                 <td scope="col">{{ $row->kka }}</td>
+                                <td scope="col">
+                                    {{ $row->kka +
+                                        $row->pdk4 +
+                                        $row->pdk3 +
+                                        $row->pdk2 +
+                                        $row->pdk1 +
+                                        $row->pps +
+                                        $row->inf +
+                                        $row->ing +
+                                        $row->mtk +
+                                        $row->jwa +
+                                        $row->sbd +
+                                        $row->sej +
+                                        $row->pjk +
+                                        $row->ind +
+                                        $row->pnc +
+                                        $row->agm }}
+                                </td>
+                                <td scope="col">
+                                    {{ ($row->kka +
+                                        $row->pdk4 +
+                                        $row->pdk3 +
+                                        $row->pdk2 +
+                                        $row->pdk1 +
+                                        $row->pps +
+                                        $row->inf +
+                                        $row->ing +
+                                        $row->mtk +
+                                        $row->jwa +
+                                        $row->sbd +
+                                        $row->sej +
+                                        $row->pjk +
+                                        $row->ind +
+                                        $row->pnc +
+                                        $row->agm) /
+                                        16 }}
+                                </td>
+                                <td scope="col">{{ }}</td>
                             </tr>
                         @endforeach
                     </tbody>
