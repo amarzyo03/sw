@@ -5,7 +5,7 @@
             <div class="d-flex justify-content-between align-items-center">
                 <h6 class="my-0">DATA SISWA</h6>
                 <h6 class="my-0">
-                    <a href="{{ route('siswa.create') }}" class="text-decoration-none text-success">
+                    <a href="{{ route('siswa.create') }}" class="btn btn-sm btn-success text-white">
                         TAMBAH SISWA
                     </a>
                 </h6>
@@ -14,7 +14,17 @@
         </div>
 
         <div class="card-body">
-            <table class="table table-hover">
+            <div class="d-flex justify-content-between align-items-center">
+                <h6 class="my-0">Jumlah Siswa : {{ $data->total() }}</h6>
+                <form action="{{ route('siswa.index') }}" method="GET" class="d-flex" role="search">
+                    <div class="input-group input-group-sm">
+                        <input type="text" class="form-control" placeholder="Pencarian..." name="search"
+                            value="{{ request()->get('search') }}">
+                        <button class="btn btn-primary" type="submit">Cari</button>
+                    </div>
+                </form>
+            </div>
+            <table class="table table-hover table-striped table-bordered mt-3">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -27,7 +37,7 @@
                 <tbody>
                     @foreach ($data as $siswa)
                         <tr>
-                            <th scope="row">{{ $loop->iteration }}</th>
+                            <th scope="row">{{ $loop->iteration + ($data->currentPage() - 1) * $data->perPage() }}</th>
                             <td>{{ $siswa->nis }}</td>
                             <td>{{ ucwords($siswa->nama) }}</td>
                             <td>{{ $siswa->telp }}</td>
@@ -37,7 +47,7 @@
                                         <button id="btnGroupVerticalDrop1" type="button"
                                             class="btn btn-primary dropdown-toggle" data-coreui-toggle="dropdown"
                                             aria-expanded="false">
-                                            Aksi
+                                            menu
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop1">
                                             <li><a class="dropdown-item text-primary"
@@ -54,6 +64,9 @@
                     @endforeach
                 </tbody>
             </table>
+            <div class="flex justify-content-ened">
+                {{ $data->links() }}
+            </div>
         </div>
     </div>
 @endsection

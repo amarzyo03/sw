@@ -12,7 +12,7 @@ class siswaController extends Controller
      */
     public function index()
     {
-        $data = siswaModel::all();
+        $data = siswaModel::paginate(10);
         return view('siswa.index', compact('data'));
     }
 
