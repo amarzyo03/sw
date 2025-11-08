@@ -77,7 +77,7 @@
 
                 <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
                         <svg class="nav-icon">
-                            <use xlink:href="node_modules/free.svg#cil-book"></use>
+                            <use xlink:href="/node_modules/free.svg#cil-book"></use>
                         </svg>PSTS</a>
                     <ul class="nav-group-items compact">
                         <li class="nav-item">
@@ -92,7 +92,7 @@
 
                 <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
                         <svg class="nav-icon">
-                            <use xlink:href="node_modules/free.svg#cil-book"></use>
+                            <use xlink:href="/node_modules/free.svg#cil-book"></use>
                         </svg>PSAS</a>
                     <ul class="nav-group-items compact">
                         <li class="nav-item">
@@ -117,7 +117,7 @@
 
                 <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
                         <svg class="nav-icon">
-                            <use xlink:href="node_modules/free.svg#cil-book"></use>
+                            <use xlink:href="/node_modules/free.svg#cil-book"></use>
                         </svg>PSTS</a>
                     <ul class="nav-group-items compact">
                         <li class="nav-item">
@@ -132,7 +132,7 @@
 
                 <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
                         <svg class="nav-icon">
-                            <use xlink:href="node_modules/free.svg#cil-book"></use>
+                            <use xlink:href="/node_modules/free.svg#cil-book"></use>
                         </svg>PSAS</a>
                     <ul class="nav-group-items compact">
                         <li class="nav-item">
