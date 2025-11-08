@@ -110,6 +110,12 @@ class mapelSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
+            [
+                'nama' => 'Dasar-dasar Keahlian',
+                'singkatan' => 'ddk',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
         ]);
     }
 }

@@ -8,6 +8,7 @@ use App\Http\Controllers\userSiswaController;
 use App\Http\Controllers\authController;
 use App\Http\Controllers\mapelController;
 use App\Http\Controllers\nilaiMurniPSTSGanjilController;
+use App\Http\Controllers\raporGanjilController;
 
 // Route::get('/', function () {
 //     return view('welcome');
