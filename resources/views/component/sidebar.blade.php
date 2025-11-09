@@ -67,7 +67,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="/nilai-rapor-ganjil">
                             <span class="nav-icon">
                                 <span class="nav-icon-bullet"></span>
                             </span> Nilai

@@ -4,11 +4,11 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\siswaController;
 use App\Http\Controllers\dashboardController;
-use App\Http\Controllers\userSiswaController;
 use App\Http\Controllers\authController;
+use App\Http\Controllers\ganjil\rapor\nilaiController;
 use App\Http\Controllers\mapelController;
 use App\Http\Controllers\nilaiMurniPSTSGanjilController;
-use App\Http\Controllers\raporGanjilController;
+use App\Http\Controllers\userSiswaController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -31,6 +31,11 @@ Route::middleware(['adminAuth'])->group(function () {
 
     // Nilai Murni PSTS
     Route::resource('nilai-murni-psts-ganjil', nilaiMurniPSTSGanjilController::class);
+
+    // Nilai Rapor Ganjil
+    Route::get('nilai-rapor-ganjil', [nilaiController::class, 'index']);
+    Route::get('nilai-rapor-ganjil/{id}/create', [nilaiController::class, 'create']);
+    Route::post('nilai-rapor-ganjil', [nilaiController::class, 'store']);
 });
 
 

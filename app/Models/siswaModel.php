@@ -14,4 +14,9 @@ class siswaModel extends Model
     {
         return $this->hasMany(nilaiMurniPSTSGanjilModel::class, 'siswa_id', 'id');
     }
+
+    public function nilaiRaporGanjil()
+    {
+        return $this->hasMany(nilaiRaporGanjilModel::class, 'siswa_id', 'id');
+    }
 }
