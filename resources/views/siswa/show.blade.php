@@ -95,12 +95,12 @@
                         </div>
 
                         <div class="mb-3 row">
-                            <label for="foto" class="col-sm-3 col-form-label">Foto</label>
+                            <label for="foto" class="col-sm-3 col-form-label">File Foto</label>
                             <div class="col-sm-9">
                                 @if ($siswa->foto)
-                                    <input type="text" class="form-control-plaintext" id="foto" name="foto" value=" File Saat ini: {{ $siswa->foto }}" disabled>
+                                    <input type="text" class="form-control-plaintext" id="foto" name="foto" value=": {{ $siswa->foto }}" disabled>
                                 @else
-                                    <input type="text" class="form-control-plaintext" id="foto" name="foto" value=" File Saat ini: Belum ada foto" disabled>
+                                    <input type="text" class="form-control-plaintext" id="foto" name="foto" value=": Belum ada foto" disabled>
                                 @endif
                             </div>
                         </div>

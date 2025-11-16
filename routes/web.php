@@ -24,7 +24,6 @@ Route::middleware(['adminAuth'])->group(function () {
 
     // siswa
     Route::resource('siswa', siswaController::class);
-    Route::get('/siswa/{id}/delete', [siswaController::class, 'destroy']);
 
     // Mapel
     Route::resource('mapel', mapelController::class);

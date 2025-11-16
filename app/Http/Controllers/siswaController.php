@@ -12,9 +12,12 @@ class siswaController extends Controller
      */
     public function index(Request $request)
     {
-        $search = $request->search;
-        $data = siswaModel::where('nama', 'like', "%{$search}%")->paginate(10);
-        return view('siswa.index', compact('data'));
+        $search     = $request->search;
+        $data       = siswaModel::where('nama', 'like', "%{$search}%")->paginate(10);
+        $laki       = siswaModel::where('jenis_kelamin', 'l')->count();
+        $perempuan  = siswaModel::where('jenis_kelamin', 'p')->count();
+
+        return view('siswa.index', compact('data', 'laki', 'perempuan'));
     }
 
     /**

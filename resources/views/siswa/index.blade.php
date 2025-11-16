@@ -15,7 +15,7 @@
 
         <div class="card-body">
             <div class="d-flex justify-content-between align-items-center">
-                <h6 class="my-0">Jumlah Siswa : {{ $data->total() }}</h6>
+                <span class="my-0">Jumlah Siswa : {{ $data->total() }} | L : {{ $laki }} - P : {{ $perempuan }} |</span>
                 <form action="{{ route('siswa.index') }}" method="GET" class="d-flex" role="search">
                     <div class="input-group input-group-sm">
                         <input type="text" class="form-control" placeholder="Pencarian..." name="search" value="{{ request()->get('search') }}">
@@ -49,7 +49,13 @@
                                         <ul class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop1">
                                             <li><a class="dropdown-item text-primary" href="{{ route('siswa.show', $siswa->id) }}">Detail</a></li>
                                             <li><a class="dropdown-item text-warning" href="{{ route('siswa.edit', $siswa->id) }}">Edit</a></li>
-                                            <li><a class="dropdown-item text-danger" href="/siswa/{{ $siswa->id }}/delete">Delete</a></li>
+                                            <form action="{{ route('siswa.destroy', $siswa->id) }}" method="post" class="d-inline">
+                                                @csrf
+                                                @method('delete')
+                                                <li>
+                                                    <button type="submit" class="dropdown-item btn btn-link text-danger">Delete</button>
+                                                </li>
+                                            </form>
                                         </ul>
                                     </div>
                                 </div>
