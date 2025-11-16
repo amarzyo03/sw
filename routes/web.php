@@ -5,9 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\siswaController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\authController;
+use App\Http\Controllers\ganjil\psts\nilaiMurniController;
 use App\Http\Controllers\ganjil\rapor\nilaiController;
 use App\Http\Controllers\mapelController;
-use App\Http\Controllers\nilaiMurniPSTSGanjilController;
 use App\Http\Controllers\userSiswaController;
 
 // Route::get('/', function () {
@@ -29,7 +29,8 @@ Route::middleware(['adminAuth'])->group(function () {
     Route::resource('mapel', mapelController::class);
 
     // Nilai Murni PSTS
-    Route::resource('nilai-murni-psts-ganjil', nilaiMurniPSTSGanjilController::class);
+    Route::get('ganjil/psts/nilai-murni', [nilaiMurniController::class, 'index']);
+    Route::get('ganjil/psts/nilai-murni/export', [nilaiMurniController::class, 'export']);
 
     // Nilai Rapor Ganjil
     Route::get('nilai-rapor-ganjil', [nilaiController::class, 'index']);
