@@ -11,25 +11,25 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('nilai_murni_psts_ganjil', function (Blueprint $table) {
+        Schema::create('ganjil_psas_rapor', function (Blueprint $table) {
             $table->id();
             $table->integer('siswa_id');
             $table->string('agm');
-            $table->string('pnc');
-            $table->string('ind');
-            $table->string('pjk');
+            $table->string('panc');
+            $table->string('indo');
+            $table->string('pjok');
             $table->string('sej');
             $table->string('sbd');
             $table->string('jwa');
             $table->string('mtk');
-            $table->string('ing');
-            $table->string('inf');
-            $table->string('pps');
-            $table->string('pdk1');
-            $table->string('pdk2');
-            $table->string('pdk3');
-            $table->string('pdk4');
+            $table->string('ingg');
+            $table->string('info');
+            $table->string('pipas');
+            $table->string('ddk');;
             $table->string('kka');
+            $table->string('jml');
+            $table->string('rerata');
+            $table->string('rank');
             $table->timestamps();
         });
     }
@@ -39,6 +39,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('nilai_murni_psts_ganjil');
+        Schema::dropIfExists('ganjil_psas_rapor');
     }
 };

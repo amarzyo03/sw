@@ -34,12 +34,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($data as $siswa)
+                    @foreach ($data as $i => $row)
                         <tr>
                             <th scope="row">{{ $loop->iteration + ($data->currentPage() - 1) * $data->perPage() }}</th>
-                            <td>{{ $siswa->nis }}</td>
-                            <td>{{ ucwords($siswa->nama) }}</td>
-                            <td>{{ $siswa->telp }}</td>
+                            <td>{{ $row->nis }}</td>
+                            <td>{{ ucwords($row->nama) }}</td>
+                            <td>{{ $row->telp }}</td>
                             <td>
                                 <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
                                     <div class="btn-group btn-group-sm " role="group">
@@ -47,9 +47,9 @@
                                             menu
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop1">
-                                            <li><a class="dropdown-item text-primary" href="{{ route('siswa.show', $siswa->id) }}">Detail</a></li>
-                                            <li><a class="dropdown-item text-warning" href="{{ route('siswa.edit', $siswa->id) }}">Edit</a></li>
-                                            <form action="{{ route('siswa.destroy', $siswa->id) }}" method="post" class="d-inline">
+                                            <li><a class="dropdown-item text-primary" href="{{ route('siswa.show', $row->id) }}">Detail</a></li>
+                                            <li><a class="dropdown-item text-warning" href="{{ route('siswa.edit', $row->id) }}">Edit</a></li>
+                                            <form action="{{ route('siswa.destroy', $row->id) }}" method="post" class="d-inline">
                                                 @csrf
                                                 @method('delete')
                                                 <li>

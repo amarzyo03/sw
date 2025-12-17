@@ -9,376 +9,316 @@
 </head>
 
 <style>
+    body {
+        font-family: Arial, sans-serif;
+        font-size: 12px;
+        margin: 10px;
+    }
+
     .judul {
         text-align: center;
-        margin: 0 auto;
-        margin-bottom: 10px;
-        margin-top: 10px;
+        margin: 0;
+        margin-bottom: 6px;
     }
 
     .judul h3,
     .judul p {
-        margin: 3px 0;
+        margin: 2px 0;
     }
 
+    /* Identitas */
     .tabel-identitas {
         width: 100%;
         border-collapse: collapse;
-        font-size: 14px;
-        margin-top: 10px;
-        margin-bottom: 10px;
+        margin-bottom: 6px;
     }
 
-    /* Semua kolom nowrap */
     .tabel-identitas td {
         padding: 1px 2px;
-        vertical-align: top;
-        border: none;
         white-space: nowrap;
     }
 
-    /* Program Keahlian boleh wrap */
-    .tabel-identitas .program-keahlian {
+    .program-keahlian {
         white-space: normal !important;
     }
 
-    /* Label kiri lebih pendek supaya titik tidak jauh */
-    .tabel-identitas .label {
-        width: 100px;
-        /* dari 130 → 100 agar lebih dekat */
-        font-weight: 500;
+    .label {
+        width: 90px;
     }
 
-    /* Titik dibuat super rapat */
-    .tabel-identitas .titik {
-        width: 1px;
-        /* sangat kecil */
-        padding-left: 0;
-        padding-right: 1px;
+    .titik {
+        width: 5px;
     }
 
-    .tabel-nilai {
+    /* Tabel nilai */
+    table.tg {
         width: 100%;
         border-collapse: collapse;
-        font-size: 14px;
+        font-size: 12px;
     }
 
-    .tabel-nilai th {
-        background: #e6e6e6;
+    .tg td,
+    .tg th {
         border: 1px solid #000;
-        padding: 6px;
-        text-align: center;
-        font-weight: bold;
-    }
-
-    .tabel-nilai td {
-        border: 1px solid #000;
-        padding: 4px 6px;
-        vertical-align: top;
-    }
-
-    /* Kolom nilai */
-    .tabel-nilai .nilai {
-        text-align: center;
-        font-weight: bold;
-    }
-
-    /* Subjudul kelompok */
-    .subjudul td {
-        background: #f3f3f3;
-        font-weight: bold;
-        padding: 5px;
-    }
-
-    /* Baris total / rata-rata / peringkat */
-    .subjudul2 td {
-        font-weight: bold;
-        background: #fafafa;
-    }
-
-    /* Kolom A/B */
-    .kelompok {
-        text-align: center;
-        font-weight: bold;
-        width: 30px;
-    }
-
-    .tg {
-        border-collapse: collapse;
-        border-spacing: 0;
-    }
-
-    .tg td {
-        border-color: black;
-        border-style: solid;
-        border-width: 1px;
-        font-family: Arial, sans-serif;
-        font-size: 14px;
-        overflow: hidden;
-        padding: 3px 6px;
-        word-break: normal;
+        padding: 2px 4px;
     }
 
     .tg th {
-        border-color: black;
-        border-style: solid;
-        border-width: 1px;
-        font-family: Arial, sans-serif;
-        font-size: 14px;
-        font-weight: normal;
-        overflow: hidden;
-        padding: 3px 6px;
-        word-break: normal;
-    }
-
-    .tg .tg-lboi {
-        border-color: inherit;
-        text-align: left;
-        vertical-align: middle
-    }
-
-    .tg .tg-9wq8 {
-        border-color: inherit;
-        text-align: center;
-        vertical-align: middle
-    }
-
-    .tg .tg-uzvj {
-        border-color: inherit;
+        background: #e6e6e6;
         font-weight: bold;
         text-align: center;
-        vertical-align: middle
     }
 
-    .tg .tg-g7sd {
-        border-color: inherit;
+    .tg-uzvj {
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .tg-9wq8 {
+        text-align: center;
+    }
+
+    .tg-lboi {
+        text-align: left;
+    }
+
+    .tg-g7sd {
         font-weight: bold;
         text-align: left;
-        vertical-align: middle
+        background: #f3f3f3;
     }
 
+    /* Tanda tangan */
     table.table-ttd {
         width: 100%;
+        margin-top: 2px;
+        /* sangat kecil */
         border-collapse: collapse;
-        margin-top: 20px;
     }
 
     table.table-ttd td {
-        vertical-align: top;
-        padding: 10px;
+        font-size: 12px;
         text-align: center;
-        border: 1px solid #ccc;
+        vertical-align: top;
+        padding: 0;
+        line-height: 14px;
+        /* mengecilkan jarak antar baris */
     }
 
-    table.table-ttd .ttd-space {
-        height: 60px;
-        /* ruang ttd */
+    table.table-ttd p {
+        margin: 0;
+        /* HAPUS jarak bawaan <p> */
+        padding: 0;
+    }
+
+    .ttd-space {
+        height: 10px;
+        /* ruang tanda tangan kecil */
     }
 </style>
 
 <body>
-    <img src="{{ asset('img/kop.png') }}" width="100%">
+    @foreach ($siswa as $i => $row)
+        <main>
+            <img src="{{ asset('img/kop.png') }}" width="100%">
 
-    {{-- Judul --}}
-    <div class="judul">
-        <h3>LAPORAN NILAI MURNI</h3>
-        <P>PENILAIAN SUMATIF TENGAH SEMESTER (PSTS GANJIL)</P>
-        <P>TAHUN AJARAN 2025/2026</P>
-    </div>
+            <div class="judul">
+                <h3>LAPORAN NILAI MURNI</h3>
+                <p>PENILAIAN SUMATIF TENGAH SEMESTER (PSTS) GANJIL</p>
+                <p>TAHUN AJARAN 2025/2026</p>
+            </div>
 
-    {{-- Table Inditas --}}
-    <table class="tabel-identitas">
-        <tr>
-            <td class="label">Nama Murid</td>
-            <td class="titik">:</td>
-            <td>AFRILIANA NURUL KHASANAH</td>
+            <table class="tabel-identitas">
+                <tr>
+                    <td class="label">Nama</td>
+                    <td class="titik">:</td>
+                    <td>{{ strtoupper($row->siswa->nama) }}</td>
+                    <td class="label">Kelas</td>
+                    <td class="titik">:</td>
+                    <td>X TKJ-2</td>
+                </tr>
+                <tr>
+                    <td class="label">NIS</td>
+                    <td class="titik">:</td>
+                    <td>{{ $row->siswa->nis }}</td>
+                    <td class="label">KKTP</td>
+                    <td class="titik">:</td>
+                    <td>80 - 85</td>
+                </tr>
+                <tr>
+                    <td class="label">NISN</td>
+                    <td class="titik">:</td>
+                    <td>{{ $row->siswa->nisn }}</td>
+                    <td class="label">Program</td>
+                    <td class="titik">:</td>
+                    <td class="program-keahlian">Teknik Jaringan Komputer dan Telekomunikasi</td>
+                </tr>
+            </table>
 
-            <td class="label">Kelas</td>
-            <td class="titik">:</td>
-            <td>X TKJ-2</td>
-        </tr>
+            <table class="tg">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th colspan="4">Mata Pelajaran</th>
+                        <th>Nilai</th>
+                        <th colspan="3">Keterangan</th>
+                    </tr>
+                </thead>
 
-        <tr>
-            <td class="label">NIS</td>
-            <td class="titik">:</td>
-            <td>15570</td>
+                <tbody>
+                    <tr>
+                        <td class="tg-uzvj" rowspan="8">A</td>
+                        <td class="tg-g7sd" colspan="8">KELOMPOK MAPEL UMUM</td>
+                    </tr>
 
-            <td class="label">KKTP</td>
-            <td class="titik">:</td>
-            <td>80 - 85</td>
-        </tr>
+                    <tr>
+                        <td class="tg-9wq8">1.</td>
+                        <td colspan="3">Pendidikan Agama dan Budi Pekerti</td>
+                        <td class="tg-9wq8">{{ $row->agm }}</td>
+                        <td colspan="3">Remedial</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-9wq8">2.</td>
+                        <td colspan="3">Pendidikan Pancasila</td>
+                        <td class="tg-9wq8">{{ $row->panc }}</td>
+                        <td colspan="3">Remedial</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-9wq8">3.</td>
+                        <td colspan="3">Bahasa Indonesia</td>
+                        <td class="tg-9wq8">{{ $row->indo }}</td>
+                        <td colspan="3">Tuntas</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-9wq8">4.</td>
+                        <td colspan="3">PJOK</td>
+                        <td class="tg-9wq8">{{ $row->pjok }}</td>
+                        <td colspan="3">Remedial</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-9wq8">5.</td>
+                        <td colspan="3">Sejarah</td>
+                        <td class="tg-9wq8">{{ $row->sej }}</td>
+                        <td colspan="3">Remedial</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-9wq8">6.</td>
+                        <td colspan="3">Seni Budaya</td>
+                        <td class="tg-9wq8">{{ $row->sbd }}</td>
+                        <td colspan="3">Tuntas</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-9wq8">7.</td>
+                        <td colspan="3">Bahasa Jawa</td>
+                        <td class="tg-9wq8">{{ $row->jwa }}</td>
+                        <td colspan="3">Remedial</td>
+                    </tr>
 
-        <tr>
-            <td class="label">NISN</td>
-            <td class="titik">:</td>
-            <td>0119609313</td>
+                    <tr>
+                        <td class="tg-uzvj" rowspan="10">B</td>
+                        <td class="tg-g7sd" colspan="8">KELOMPOK MAPEL KEJURUAN</td>
+                    </tr>
 
-            <td class="label">Program Keahlian</td>
-            <td class="titik">:</td>
-            <td>Teknik Jaringan Komputer dan<br>Telekomunikasi</td>
-        </tr>
-    </table>
+                    <tr>
+                        <td>1.</td>
+                        <td colspan="3">Matematika</td>
+                        <td class="tg-9wq8">{{ $row->mtk }}</td>
+                        <td colspan="3">Remedial</td>
+                    </tr>
+                    <tr>
+                        <td>2.</td>
+                        <td colspan="3">Bahasa Inggris</td>
+                        <td class="tg-9wq8">{{ $row->ingg }}</td>
+                        <td colspan="3">Remedial</td>
+                    </tr>
+                    <tr>
+                        <td>3.</td>
+                        <td colspan="3">Informatika</td>
+                        <td class="tg-9wq8">{{ $row->info }}</td>
+                        <td colspan="3">Tuntas</td>
+                    </tr>
+                    <tr>
+                        <td>4.</td>
+                        <td colspan="3">Projek IPAS</td>
+                        <td class="tg-9wq8">{{ $row->pipas }}</td>
+                        <td colspan="3">Remedial</td>
+                    </tr>
+                    <tr>
+                        <td>5.</td>
+                        <td colspan="3">Profesi & Kewirausahaan TJKT</td>
+                        <td class="tg-9wq8">{{ $row->ddk1 }}</td>
+                        <td colspan="3">Remedial</td>
+                    </tr>
+                    <tr>
+                        <td>6.</td>
+                        <td colspan="3">Dasar-dasar TJKT</td>
+                        <td class="tg-9wq8">{{ $row->ddk2 }}</td>
+                        <td colspan="3">Remedial</td>
+                    </tr>
+                    <tr>
+                        <td>7.</td>
+                        <td colspan="3">Media & Jaringan Telekomunikasi</td>
+                        <td class="tg-9wq8">{{ $row->ddk3 }}</td>
+                        <td colspan="3">Remedial</td>
+                    </tr>
+                    <tr>
+                        <td>8.</td>
+                        <td colspan="3">Proses Bisnis TJKT</td>
+                        <td class="tg-9wq8">{{ $row->ddk4 }}</td>
+                        <td colspan="3">Remedial</td>
+                    </tr>
+                    <tr>
+                        <td>9.</td>
+                        <td colspan="3">Koding & Kecerdasan Artifisial</td>
+                        <td class="tg-9wq8">{{ $row->kka }}</td>
+                        <td colspan="3">Remedial</td>
+                    </tr>
 
-    {{-- Tabel Nilai --}}
-    <table class="tg">
-        <thead>
-            <tr>
-                <th class="tg-uzvj">No</th>
-                <th class="tg-uzvj" colspan="4">Mata&nbsp;&nbsp;&nbsp;Pelajaran</th>
-                <th class="tg-uzvj">Nilai</th>
-                <th class="tg-uzvj" colspan="3">Kriteria dan Tindak Lanjut</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="tg-uzvj" rowspan="8">A</td>
-                <td class="tg-g7sd" colspan="8">KELOMPOK MATA PELAJARAN&nbsp;&nbsp;&nbsp;UMUM :</td>
-            </tr>
-            <tr>
-                <td class="tg-9wq8">1.</td>
-                <td class="tg-lboi" colspan="3">Pendidikan Agama dan Budi Pekerti</td>
-                <td class="tg-9wq8">66 </td>
-                <td class="tg-lboi" colspan="3">Belum Mencapai Ketuntasan Belajar dan Harus Mengikuti Remedial</td>
-            </tr>
-            <tr>
-                <td class="tg-9wq8">2.</td>
-                <td class="tg-lboi" colspan="3">Pendidikan Pancasila</td>
-                <td class="tg-9wq8">60 </td>
-                <td class="tg-lboi" colspan="3">Belum Mencapai Ketuntasan Belajar dan Harus Mengikuti Remedial</td>
-            </tr>
-            <tr>
-                <td class="tg-9wq8">3.</td>
-                <td class="tg-lboi" colspan="3">Bahasa Indonesia</td>
-                <td class="tg-9wq8">93 </td>
-                <td class="tg-lboi" colspan="3">Sudah Mencapai Ketuntasan Belajar</td>
-            </tr>
-            <tr>
-                <td class="tg-9wq8">4.</td>
-                <td class="tg-lboi" colspan="3">Pendidikan Jasmani, Olahraga dan Kesehatan</td>
-                <td class="tg-9wq8">67 </td>
-                <td class="tg-lboi" colspan="3">Belum Mencapai Ketuntasan Belajar dan Harus Mengikuti Remedial</td>
-            </tr>
-            <tr>
-                <td class="tg-9wq8">5.</td>
-                <td class="tg-lboi" colspan="3">Sejarah</td>
-                <td class="tg-9wq8">61 </td>
-                <td class="tg-lboi" colspan="3">Belum Mencapai Ketuntasan Belajar dan Harus Mengikuti Remedial</td>
-            </tr>
-            <tr>
-                <td class="tg-9wq8">6.</td>
-                <td class="tg-lboi" colspan="3">Seni Budaya</td>
-                <td class="tg-9wq8">82 </td>
-                <td class="tg-lboi" colspan="3">Sudah Mencapai Ketuntasan Belajar</td>
-            </tr>
-            <tr>
-                <td class="tg-9wq8">7.</td>
-                <td class="tg-lboi" colspan="3">Bahasa Jawa</td>
-                <td class="tg-9wq8">42 </td>
-                <td class="tg-lboi" colspan="3">Belum Mencapai Ketuntasan Belajar dan Harus Mengikuti Remedial</td>
-            </tr>
-            <tr>
-                <td class="tg-uzvj" rowspan="10">B</td>
-                <td class="tg-g7sd" colspan="8">KELOMPOK MATA PELAJARAN&nbsp;&nbsp;&nbsp;KEJURUAN :</td>
-            </tr>
-            <tr>
-                <td class="tg-lboi">1.</td>
-                <td class="tg-lboi" colspan="3">Matematika</td>
-                <td class="tg-9wq8">77 </td>
-                <td class="tg-lboi" colspan="3">Belum Mencapai Ketuntasan Belajar dan Harus Mengikuti Remedial</td>
-            </tr>
-            <tr>
-                <td class="tg-lboi">2.</td>
-                <td class="tg-lboi" colspan="3">Bahasa Inggris</td>
-                <td class="tg-9wq8">58 </td>
-                <td class="tg-lboi" colspan="3">Belum Mencapai Ketuntasan Belajar dan Harus Mengikuti Remedial</td>
-            </tr>
-            <tr>
-                <td class="tg-lboi">3.</td>
-                <td class="tg-lboi" colspan="3">Informatika</td>
-                <td class="tg-9wq8">87 </td>
-                <td class="tg-lboi" colspan="3">Sudah Mencapai Ketuntasan Belajar</td>
-            </tr>
-            <tr>
-                <td class="tg-lboi">4.</td>
-                <td class="tg-lboi" colspan="3">Projek Ilmu Pengetahuan Alam dan Sosial</td>
-                <td class="tg-9wq8">67 </td>
-                <td class="tg-lboi" colspan="3">Belum Mencapai Ketuntasan Belajar dan Harus Mengikuti Remedial</td>
-            </tr>
-            <tr>
-                <td class="tg-lboi">5.</td>
-                <td class="tg-lboi" colspan="3">Profesi dan&nbsp;&nbsp;&nbsp;Kewirausahaan di Bidang TJKT</td>
-                <td class="tg-9wq8">65 </td>
-                <td class="tg-lboi" colspan="3">Belum Mencapai Ketuntasan Belajar dan Harus Mengikuti Remedial</td>
-            </tr>
-            <tr>
-                <td class="tg-lboi">6.</td>
-                <td class="tg-lboi" colspan="3">Dasar-dasar TJKT</td>
-                <td class="tg-9wq8">69 </td>
-                <td class="tg-lboi" colspan="3">Belum Mencapai Ketuntasan Belajar dan Harus Mengikuti Remedial</td>
-            </tr>
-            <tr>
-                <td class="tg-lboi">7.</td>
-                <td class="tg-lboi" colspan="3">Media dan Jaringan Telekomunikasi</td>
-                <td class="tg-9wq8">74 </td>
-                <td class="tg-lboi" colspan="3">Belum Mencapai Ketuntasan Belajar dan Harus Mengikuti Remedial</td>
-            </tr>
-            <tr>
-                <td class="tg-lboi">8.</td>
-                <td class="tg-lboi" colspan="3">Proses Bisnis di Bidang TJKT</td>
-                <td class="tg-9wq8">58 </td>
-                <td class="tg-lboi" colspan="3">Belum Mencapai Ketuntasan Belajar dan Harus Mengikuti Remedial</td>
-            </tr>
-            <tr>
-                <td class="tg-lboi">9.</td>
-                <td class="tg-lboi" colspan="3">Koding dan Kecerdasan Artifisial</td>
-                <td class="tg-9wq8">68 </td>
-                <td class="tg-lboi" colspan="3">Belum Mencapai Ketuntasan Belajar dan Harus Mengikuti Remedial</td>
-            </tr>
-            <tr>
-                <td class="tg-lboi" colspan="5"> Jumlah Nilai</td>
-                <td class="tg-9wq8">1094 </td>
-                <td class="tg-lboi" colspan="3"> </td>
-            </tr>
-            <tr>
-                <td class="tg-lboi" colspan="5"> Rata-Rata Nilai</td>
-                <td class="tg-9wq8">68,38 </td>
-                <td class="tg-lboi" colspan="3"> </td>
-            </tr>
-            <tr>
-                <td class="tg-lboi" colspan="5"> Peringkat Ke-</td>
-                <td class="tg-9wq8">17 </td>
-                <td class="tg-lboi" colspan="3">dari 36 &nbsp;&nbsp;&nbsp;Murid</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <table class="table-ttd">
-        <tr>
-            <td>
-                Mengetahui, <br>
-                Orang Tua/Wali Murid<br><br><br>
-                (sini utk ttd)<br><br><br>
-                (...........................................)
-            </td>
-
-            <td>
-                Kroya, 10 Oktober 2025<br>
-                Wali Kelas<br><br><br>
-                (sini utk ttd)<br><br><br>
-                (............................................)
-            </td>
-        </tr>
-
-        <tr>
-            <td colspan="2">
-                Mengetahui,<br>
-                Kepala Sekolah<br><br><br>
-                (sini utk ttd)<br><br><br>
-                (.................................)
-            </td>
-        </tr>
-    </table>
-
+                    <tr>
+                        <td colspan="5">Jumlah Nilai</td>
+                        <td class="tg-9wq8">{{ $row->jml }}</td>
+                        <td colspan="3"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5">Rata-Rata</td>
+                        <td class="tg-9wq8">{{ $row->rerata }}</td>
+                        <td colspan="3"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5">Peringkat</td>
+                        <td class="tg-9wq8">{{ $row->rank }}</td>
+                        <td colspan="3">dari 36 Murid</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <br>
+            <br>
+            <br>
+            <table class="table-ttd">
+                <tr>
+                    <td>
+                        Orang Tua/Wali Murid<br><br>
+                        <div class="ttd-space"></div>
+                        (................................)
+                    </td>
+                    <td>
+                        Kroya, 10 Oktober 2025<br>
+                        Wali Kelas<br><br>
+                        <div class="ttd-space"></div>
+                        <strong>ADIS MARBATRI, S.Kom</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        Kepala Sekolah<br><br>
+                        <div class="ttd-space"></div>
+                        (...............................)
+                    </td>
+                </tr>
+            </table>
+        </main>
+    @endforeach
 </body>
 
 </html>

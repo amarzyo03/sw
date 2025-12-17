@@ -5,7 +5,7 @@
                 <use xlink:href="/node_modules/free.svg#cil-menu"></use>
             </svg>
         </button>
-        <ul class="header-nav d-none d-lg-flex">
+        {{-- <ul class="header-nav d-none d-lg-flex">
             @if (session()->has('admin_id'))
                 <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Users</a></li>
@@ -25,7 +25,7 @@
                     <svg class="icon icon-lg">
                         <use xlink:href="/node_modules/free.svg#cil-envelope-open"></use>
                     </svg></a></li>
-        </ul>
+        </ul> --}}
         <ul class="header-nav">
             <li class="nav-item py-1">
                 <div class="vr h-100 mx-2 text-body text-opacity-75"></div>
@@ -68,38 +68,18 @@
                     <div class="avatar avatar-md"><img class="avatar-img" src="/assets/img/user.png" alt="user@email.com"></div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end pt-0">
-                    <div class="dropdown-header bg-body-tertiary text-body-secondary fw-semibold rounded-top mb-2">
-                        Account</div><a class="dropdown-item" href="#">
-                        <svg class="icon me-2">
-                            <use xlink:href="/node_modules/free.svg#cil-bell"></use>
-                        </svg> Updates<span class="badge badge-sm bg-info ms-2">42</span></a><a class="dropdown-item" href="#">
-                        <svg class="icon me-2">
-                            <use xlink:href="/node_modules/free.svg#cil-envelope-open">
-                            </use>
-                        </svg> Messages<span class="badge badge-sm bg-success ms-2">42</span></a><a class="dropdown-item" href="#">
-                        <svg class="icon me-2">
-                            <use xlink:href="/node_modules/free.svg#cil-task"></use>
-                        </svg> Tasks<span class="badge badge-sm bg-danger ms-2">42</span></a><a class="dropdown-item" href="#">
-                        <svg class="icon me-2">
-                            <use xlink:href="/node_modules/free.svg#cil-comment-square">
-                            </use>
-                        </svg> Comments<span class="badge badge-sm bg-warning ms-2">42</span></a>
-                    <div class="dropdown-header bg-body-tertiary text-body-secondary fw-semibold my-2">
+                    <div class="dropdown-header bg-body-tertiary text-body-secondary fw-semibold mb-2">
                         <div class="fw-semibold">Settings</div>
-                    </div><a class="dropdown-item" href="#">
+                    </div>
+                    <a class="dropdown-item" href="#">
                         <svg class="icon me-2">
                             <use xlink:href="/node_modules/free.svg#cil-user"></use>
                         </svg> Profile</a><a class="dropdown-item" href="#">
                         <svg class="icon me-2">
                             <use xlink:href="/node_modules/free.svg#cil-settings"></use>
                         </svg> Settings</a><a class="dropdown-item" href="#">
-                        <svg class="icon me-2">
-                            <use xlink:href="/node_modules/free.svg#cil-credit-card">
-                            </use>
-                        </svg> Payments<span class="badge badge-sm bg-secondary ms-2">42</span></a><a class="dropdown-item" href="#">
-                        <svg class="icon me-2">
-                            <use xlink:href="/node_modules/free.svg#cil-file"></use>
-                        </svg> Projects<span class="badge badge-sm bg-primary ms-2">42</span></a>
+                    </a>
+
                     <div class="dropdown-divider"></div>
 
                     <a href="{{ session()->has('admin_id') ? '/logout' : (session()->has('siswa_id') ? '/user-siswa/logout' : '') }}" class="dropdown-item text-danger" href="#">

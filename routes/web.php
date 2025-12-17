@@ -5,9 +5,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\siswaController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\authController;
+use App\Http\Controllers\dataKelasController;
+use App\Http\Controllers\ganjil\psas\raporController;
 use App\Http\Controllers\ganjil\psts\nilaiMurniController;
 use App\Http\Controllers\ganjil\rapor\nilaiController;
 use App\Http\Controllers\mapelController;
+use App\Http\Controllers\presensiController;
 use App\Http\Controllers\userSiswaController;
 
 // Route::get('/', function () {
@@ -19,23 +22,19 @@ Route::get('/', [authController::class, 'login']);
 Route::post('/attemp-login', [authController::class, 'attempLogin']);
 
 Route::middleware(['adminAuth'])->group(function () {
-    Route::resource('dashboard', dashboardController::class);
-    Route::get('/logout', [authController::class, 'logout']);
+    Route::resource('dashboard', dashboardController::class); // dashboard
+    Route::resource('siswa', siswaController::class); // siswa
+    Route::resource('presensi', presensiController::class); // presensi
 
-    // siswa
-    Route::resource('siswa', siswaController::class);
-
-    // Mapel
-    Route::resource('mapel', mapelController::class);
-
-    // Nilai Murni PSTS
-    Route::get('ganjil/psts/nilai-murni', [nilaiMurniController::class, 'index']);
+    // Nilai Murni PSTS Ganjil
+    Route::get('ganjil/psts/nilai-murni', [nilaiMurniController::class, 'index'])->name('nilai-murni-psts');
     Route::get('ganjil/psts/nilai-murni/export', [nilaiMurniController::class, 'export']);
 
-    // Nilai Rapor Ganjil
-    Route::get('nilai-rapor-ganjil', [nilaiController::class, 'index']);
-    Route::get('nilai-rapor-ganjil/{id}/create', [nilaiController::class, 'create']);
-    Route::post('nilai-rapor-ganjil', [nilaiController::class, 'store']);
+    // Rapor PSAS Ganjil
+    Route::get('ganjil/psas/rapor', [raporController::class, 'index'])->name('rapor-psas');
+
+    // Logout
+    Route::get('/logout', [authController::class, 'logout']);
 });
 
 

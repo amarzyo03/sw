@@ -22,136 +22,54 @@
 
         {{-- user admin --}}
         @if (session()->has('admin_id'))
-            <li class="nav-title">PENILAIAN GANJIL</li>
-
-            <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
-                    <svg class="nav-icon">
-                        <use xlink:href="/node_modules/free.svg#cil-book"></use>
-                    </svg>PSTS</a>
-                <ul class="nav-group-items compact">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/ganjil/psts/nilai-murni">
-                            <span class="nav-icon">
-                                <span class="nav-icon-bullet"></span>
-                            </span> Nilai Murni
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
-                    <svg class="nav-icon">
-                        <use xlink:href="/node_modules/free.svg#cil-book"></use>
-                    </svg>PSAS</a>
-                <ul class="nav-group-items compact">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/psts-ganjil">
-                            <span class="nav-icon">
-                                <span class="nav-icon-bullet"></span>
-                            </span> Nilai Murni
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
-                    <svg class="nav-icon">
-                        <use xlink:href="/node_modules/free.svg#cil-book"></use>
-                    </svg>RAPOR</a>
-                <ul class="nav-group-items compact">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span class="nav-icon">
-                                <span class="nav-icon-bullet"></span>
-                            </span> Recap
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/nilai-rapor-ganjil">
-                            <span class="nav-icon">
-                                <span class="nav-icon-bullet"></span>
-                            </span> Nilai
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/psts-ganjil">
-                            <span class="nav-icon">
-                                <span class="nav-icon-bullet"></span>
-                            </span> Extra
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/psts-ganjil">
-                            <span class="nav-icon">
-                                <span class="nav-icon-bullet"></span>
-                            </span> Ketidakhadiran
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="nav-title">PENILAIAN GENAP</li>
-
-            <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
-                    <svg class="nav-icon">
-                        <use xlink:href="/node_modules/free.svg#cil-book"></use>
-                    </svg>PSTS</a>
-                <ul class="nav-group-items compact">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/psts-ganjil">
-                            <span class="nav-icon">
-                                <span class="nav-icon-bullet"></span>
-                            </span> Nilai Murni
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
-                    <svg class="nav-icon">
-                        <use xlink:href="/node_modules/free.svg#cil-book"></use>
-                    </svg>PSAS</a>
-                <ul class="nav-group-items compact">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/psts-ganjil">
-                            <span class="nav-icon">
-                                <span class="nav-icon-bullet"></span>
-                            </span> Nilai Murni
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/psts-ganjil">
-                            <span class="nav-icon">
-                                <span class="nav-icon-bullet"></span>
-                            </span> DAFTAR NILAI
-                        </a>
-                    </li>
-                </ul>
-            </li>
+            {{-- <li class="nav-title text-white mt-0">PENILAIAN GANJIL</li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{ route('nilai-murni-psts') }}">
                     <svg class="nav-icon">
-                        <use xlink:href="/node_modules/free.svg#cil-user"></use>
-                    </svg> RAPORT
+                        <use xlink:href="/node_modules/free.svg#cil-speedometer"></use>
+                    </svg> PSTS : Nilai Murni
                 </a>
+            </li> --}}
+
+            <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+                    <svg class="nav-icon">
+                        <use xlink:href="/node_modules/free.svg#cil-book"></use>
+                    </svg>Penilaian Ganjil</a>
+                <ul class="nav-group-items compact">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('nilai-murni-psts') }}">
+                            <span class="nav-icon">
+                                <span class="nav-icon-bullet"></span>
+                            </span> PSTS : Nilai Murni
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('rapor-psas') }}">
+                            <span class="nav-icon">
+                                <span class="nav-icon-bullet"></span>
+                            </span> PSAS : Rapor
+                        </a>
+                    </li>
+                </ul>
             </li>
 
-            <li class="nav-title">MASTER</li>
+
+            <li class="nav-title text-white mt-0">MASTER</li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('presensi.index') }}">
+                    <svg class="nav-icon">
+                        <use xlink:href="/node_modules/free.svg#cil-speedometer"></use>
+                    </svg> Presensi
+                </a>
+            </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('siswa.index') }}">
                     <svg class="nav-icon">
                         <use xlink:href="/node_modules/free.svg#cil-user"></use>
                     </svg> Siswa
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('mapel.index') }}">
-                    <svg class="nav-icon">
-                        <use xlink:href="/node_modules/free.svg#cil-user"></use>
-                    </svg> Mapel
                 </a>
             </li>
         @endif

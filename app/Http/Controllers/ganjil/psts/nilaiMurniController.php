@@ -22,6 +22,6 @@ class nilaiMurniController extends Controller
         ];
 
         $pdf = Pdf::loadView('ganjil.psts.nilai_murni_export', $data)->setPaper('a4', 'potrait');
-        return $pdf->stream('contoh.pdf');
+        return $pdf->stream('nilai murni_xtkj2_psts_ganjil_2025_2026.pdf');
     }
 }
