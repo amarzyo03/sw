@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ganjil\psts\nilaiMurniModel;
 use App\Models\nilaiMurniPSTSGanjilModel;
 use Illuminate\Http\Request;
 use App\Models\siswaModel;
@@ -46,28 +47,28 @@ class userSiswaController extends Controller
     }
 
     // ############################### //
-    public function dashboard()
+    public function dashboard() // dashboard siswa
     {
         $id = session('siswa_id');
         $siswa = siswaModel::findOrFail($id);
         return view('user-siswa.dashboard', compact('siswa'));
     }
 
-    public function show()
+    public function show() // profil siswa
     {
         $id = session('siswa_id');
         $siswa = siswaModel::findOrFail($id);
         return view('user-siswa.show', compact('siswa'));
     }
 
-    public function edit()
+    public function edit() // edit profil siswa
     {
         $id = session('siswa_id');
         $siswa = siswaModel::findOrFail($id);
         return view('user-siswa.edit', compact('siswa'));
     }
 
-    public function update(Request $request)
+    public function update(Request $request) // update profil siswa
     {
         $foto = $request->file('foto');
         $id = session('siswa_id');
@@ -101,11 +102,11 @@ class userSiswaController extends Controller
         return redirect()->to('/user-siswa/show');
     }
 
-    // ############################### //
-    public function nilaiMurniPSTSGanjil()
+    public function ganjil_psts_nilai_murni() // nilai murni psts ganjil siswa
     {
         $id = session('siswa_id');
-        $nilai = nilaiMurniPSTSGanjilModel::with('siswa')->findOrFail($id);
-        return view('user-siswa.nilai-murni-psts-ganjil', compact('nilai'));
+        $jml_siswa = siswaModel::count();
+        $data = nilaiMurniModel::where('siswa_id', $id)->get();
+        return view('user-siswa.ganjil_psts_nilai_murni', compact('jml_siswa', 'data'));
     }
 }

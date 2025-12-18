@@ -52,5 +52,5 @@ Route::middleware(['siswaAuth'])->prefix('user-siswa')->group(function () {
     Route::get('/logout', [userSiswaController::class, 'logout']);
 
     // Nilai Murni PSTS Ganjil
-    Route::get('/nilai-murni-psts-ganjil', [userSiswaController::class, 'nilaiMurniPSTSGanjil']);
+    Route::get('/ganjil/psts/nilai-murni', [userSiswaController::class, 'ganjil_psts_nilai_murni']);
 });

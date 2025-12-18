@@ -21,47 +21,46 @@
         </li>
 
         {{-- user admin --}}
-        @if (session()->has('admin_id'))
-            {{-- <li class="nav-title text-white mt-0">PENILAIAN GANJIL</li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('nilai-murni-psts') }}">
-                    <svg class="nav-icon">
-                        <use xlink:href="/node_modules/free.svg#cil-speedometer"></use>
-                    </svg> PSTS : Nilai Murni
-                </a>
-            </li> --}}
-
-            <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+        {{-- ================= PENILAIAN GANJIL ================= --}}
+        @if (session()->has('admin_id') || session()->has('siswa_id'))
+            <li class="nav-group">
+                <a class="nav-link nav-group-toggle" href="#">
                     <svg class="nav-icon">
                         <use xlink:href="/node_modules/free.svg#cil-book"></use>
-                    </svg>Penilaian Ganjil</a>
+                    </svg>
+                    Penilaian Ganjil
+                </a>
                 <ul class="nav-group-items compact">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('nilai-murni-psts') }}">
+                        <a class="nav-link" href="{{ session()->has('admin_id') ? route('nilai-murni-psts') : (session()->has('siswa_id') ? '/user-siswa/ganjil/psts/nilai-murni' : '#') }}">
                             <span class="nav-icon">
                                 <span class="nav-icon-bullet"></span>
-                            </span> PSTS : Nilai Murni
+                            </span>
+                            PSTS : Nilai Murni
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('rapor-psas') }}">
                             <span class="nav-icon">
                                 <span class="nav-icon-bullet"></span>
-                            </span> PSAS : Rapor
+                            </span>
+                            PSAS : Rapor
                         </a>
                     </li>
                 </ul>
             </li>
+        @endif
 
-
+        {{-- ================= MASTER (ADMIN ONLY) ================= --}}
+        @if (session()->has('admin_id'))
             <li class="nav-title text-white mt-0">MASTER</li>
 
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('presensi.index') }}">
                     <svg class="nav-icon">
                         <use xlink:href="/node_modules/free.svg#cil-speedometer"></use>
-                    </svg> Presensi
+                    </svg>
+                    Presensi
                 </a>
             </li>
 
@@ -69,33 +68,11 @@
                 <a class="nav-link" href="{{ route('siswa.index') }}">
                     <svg class="nav-icon">
                         <use xlink:href="/node_modules/free.svg#cil-user"></use>
-                    </svg> Siswa
+                    </svg>
+                    Siswa
                 </a>
             </li>
         @endif
-        {{-- End user admin --}}
-
-        {{-- user --}}
-        @if (session()->has('siswa_id'))
-            <li class="nav-title">SCHOOL</li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="/user-siswa/show">
-                    <svg class="nav-icon">
-                        <use xlink:href="/node_modules/free.svg#cil-user"></use>
-                    </svg> Profile
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="/user-siswa/nilai-murni-psts-ganjil">
-                    <svg class="nav-icon">
-                        <use xlink:href="/node_modules/free.svg#cil-book"></use>
-                    </svg> Nilai PSTS Ganjil
-                </a>
-            </li>
-        @endif
-        {{-- end user --}}
 
     </ul>
 
