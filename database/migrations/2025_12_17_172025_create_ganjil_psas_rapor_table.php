@@ -19,14 +19,13 @@ return new class extends Migration
             $table->string('indo');
             $table->string('pjok');
             $table->string('sej');
-            $table->string('sbd');
-            $table->string('jwa');
             $table->string('mtk');
             $table->string('ingg');
             $table->string('info');
             $table->string('pipas');
             $table->string('ddk');;
             $table->string('kka');
+            $table->string('jwa');
             $table->string('jml');
             $table->string('rerata');
             $table->string('rank');
