@@ -71,13 +71,15 @@
                     <div class="dropdown-header bg-body-tertiary text-body-secondary fw-semibold mb-2">
                         <div class="fw-semibold">Settings</div>
                     </div>
-                    <a class="dropdown-item" href="#">
+                    <a class="dropdown-item" href="{{ session()->has('admin_id') ? '#' : (session()->has('siswa_id') ? '/user-siswa/show' : '#') }}">
                         <svg class="icon me-2">
                             <use xlink:href="/node_modules/free.svg#cil-user"></use>
-                        </svg> Profile</a><a class="dropdown-item" href="#">
+                        </svg> Profile
+                    </a>
+                    <a class="dropdown-item" href="#">
                         <svg class="icon me-2">
                             <use xlink:href="/node_modules/free.svg#cil-settings"></use>
-                        </svg> Settings</a><a class="dropdown-item" href="#">
+                        </svg> Settings
                     </a>
 
                     <div class="dropdown-divider"></div>

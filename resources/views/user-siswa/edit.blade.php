@@ -15,32 +15,21 @@
                         <div class="mb-3 row">
                             <label for="nisn" class="col-sm-3 col-form-label">NISN</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="nisn" name="nisn"
-                                    value="{{ $siswa->nisn }}">
+                                <input type="text" class="form-control" id="nisn" name="nisn" value="{{ $siswa->nisn }}">
                             </div>
                         </div>
 
                         <div class="mb-3 row">
                             <label for="nis" class="col-sm-3 col-form-label">NIS</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="nis" name="nis"
-                                    value="{{ $siswa->nis }}">
-                            </div>
-                        </div>
-
-                        <div class="mb-3 row">
-                            <label for="nik" class="col-sm-3 col-form-label">NIK</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" id="nik" name="nik"
-                                    value="{{ $siswa->nik }}">
+                                <input type="text" class="form-control" id="nis" name="nis" value="{{ $siswa->nis }}">
                             </div>
                         </div>
 
                         <div class="mb-3 row">
                             <label for="nama" class="col-sm-3 col-form-label">Nama Lengkap</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="nama" name="nama"
-                                    value="{{ $siswa->nama }}">
+                                <input type="text" class="form-control" id="nama" name="nama" value="{{ $siswa->nama }}">
                             </div>
                         </div>
 
@@ -48,13 +37,11 @@
                             <label for="jenis_kelamin" class="col-sm-3 col-form-label">Jenis Kelamin</label>
                             <div class="col-sm-9">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="laki_laki"
-                                        value="L" {{ $siswa->jenis_kelamin == 'l' ? 'checked' : '' }}>
+                                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="laki_laki" value="L" {{ $siswa->jenis_kelamin == 'l' ? 'checked' : '' }}>
                                     <label class="form-check-label" for="laki_laki" role="button">Laki-laki</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="perempuan"
-                                        value="P" {{ $siswa->jenis_kelamin == 'p' ? 'checked' : '' }}>
+                                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="perempuan" value="P" {{ $siswa->jenis_kelamin == 'p' ? 'checked' : '' }}>
                                     <label class="form-check-label" for="perempuan" role="button">Perempuan</label>
                                 </div>
                             </div>
@@ -65,12 +52,10 @@
                             <div class="col-sm-9">
                                 <div class="row g-2">
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control mb-2" id="tempat_lahir"
-                                            name="tempat_lahir" value="{{ $siswa->tempat_lahir }}">
+                                        <input type="text" class="form-control mb-2" id="tempat_lahir" name="tempat_lahir" value="{{ $siswa->tempat_lahir }}">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir"
-                                            value="{{ $siswa->tanggal_lahir }}">
+                                        <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir" value="{{ $siswa->tanggal_lahir }}">
                                     </div>
                                 </div>
                             </div>
@@ -94,8 +79,7 @@
                         <div class="mb-3 row">
                             <label for="telp" class="col-sm-3 col-form-label">No. Telp</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="telp" name="telp"
-                                    value="{{ $siswa->telp }}">
+                                <input type="text" class="form-control" id="telp" name="telp" value="{{ $siswa->telp }}">
                             </div>
                         </div>
 
@@ -109,8 +93,7 @@
                         <div class="mb-3 row">
                             <label for="foto" class="col-sm-3 col-form-label">Foto</label>
                             <div class="col-sm-9">
-                                <input class="form-control" type="file" id="foto" name="foto"
-                                    accept="image/*">
+                                <input class="form-control" type="file" id="foto" name="foto" accept="image/*">
                                 @if ($siswa->foto)
                                     <small class="text-muted">File saat ini: {{ $siswa->foto }}</small>
                                 @else
@@ -129,9 +112,7 @@
 
                     </div>
                     <div class="col-md-4">
-                        <img id="previewFoto"
-                            src="{{ $siswa->foto ? asset('img/' . $siswa->foto) : asset('img/no-profile.png') }}"
-                            alt="Foto Siswa" class="img-fluid rounded mx-auto d-block">
+                        <img id="previewFoto" src="{{ $siswa->foto ? asset('img/' . $siswa->foto) : asset('img/no-profile.png') }}" alt="Foto Siswa" class="img-fluid rounded mx-auto d-block">
                     </div>
                 </div>
             </div>

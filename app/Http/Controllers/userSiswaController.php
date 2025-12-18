@@ -89,7 +89,6 @@ class userSiswaController extends Controller
 
         $siswa->nisn            = strtolower($request->nisn);
         $siswa->nis             = strtolower($request->nis);
-        $siswa->nik             = strtolower($request->nik);
         $siswa->nama            = strtolower($request->nama);
         $siswa->jenis_kelamin   = strtolower($request->jenis_kelamin);
         $siswa->tempat_lahir    = strtolower($request->tempat_lahir);

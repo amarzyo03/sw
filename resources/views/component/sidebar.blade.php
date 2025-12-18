@@ -13,7 +13,7 @@
 
     <ul class="sidebar-nav" data-coreui="navigation" data-simplebar>
         <li class="nav-item">
-            <a class="nav-link" href="{{ session()->has('admin_id') ? '/dashboard' : '/user-siswa/dashboard' }}">
+            <a class="nav-link" href="{{ session()->has('admin_id') ? '/dashboard' : (session()->has('siswa_id') ? '/user-siswa/dashboard' : '#') }}">
                 <svg class="nav-icon">
                     <use xlink:href="/node_modules/free.svg#cil-speedometer"></use>
                 </svg> Dashboard
