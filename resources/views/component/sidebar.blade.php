@@ -40,7 +40,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('rapor-psas') }}">
+                        <a class="nav-link" href="{{ session()->has('admin_id') ? route('rapor-psas') : (session()->has('siswa_id') ? '/user-siswa/ganjil/psas/rapor' : '#') }}">
                             <span class="nav-icon">
                                 <span class="nav-icon-bullet"></span>
                             </span>

@@ -53,4 +53,7 @@ Route::middleware(['siswaAuth'])->prefix('user-siswa')->group(function () {
 
     // Nilai Murni PSTS Ganjil
     Route::get('/ganjil/psts/nilai-murni', [userSiswaController::class, 'ganjil_psts_nilai_murni']);
+
+    // Rapor PSAS Ganjil
+    Route::get('/ganjil/psas/rapor', [userSiswaController::class, 'ganjil_psas_rapor']);
 });

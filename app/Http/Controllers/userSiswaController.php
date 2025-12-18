@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ganjil\psas\raporModel;
 use App\Models\ganjil\psts\nilaiMurniModel;
 use App\Models\nilaiMurniPSTSGanjilModel;
 use Illuminate\Http\Request;
@@ -108,5 +109,13 @@ class userSiswaController extends Controller
         $jml_siswa = siswaModel::count();
         $data = nilaiMurniModel::where('siswa_id', $id)->get();
         return view('user-siswa.ganjil_psts_nilai_murni', compact('jml_siswa', 'data'));
+    }
+
+    public function ganjil_psas_rapor() // rapor psas ganjil siswa
+    {
+        $id = session('siswa_id');
+        $jml_siswa = siswaModel::count();
+        $data = raporModel::where('siswa_id', $id)->get();
+        return view('user-siswa.ganjil_psas_rapor', compact('jml_siswa', 'data'));
     }
 }
