@@ -53,7 +53,22 @@ class presensiController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'id'       => 'required|array',
+            'sakit'    => 'required|array',
+            'izin'     => 'required|array',
+            'alpa'     => 'required|array',
+        ]);
+
+        foreach ($request->id as $i => $id) {
+            presensiModel::where('id', $id)->update([
+                'sakit' => $request->sakit[$i] ?? '0',
+                'izin'  => $request->izin[$i] ?? '0',
+                'alpa'  => $request->alpa[$i] ?? '0',
+            ]);
+        }
+
+        return redirect()->back()->with('success', 'Data presensi berhasil diperbarui');
     }
 
     /**

@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('presensi', function (Blueprint $table) {
             $table->id();
             $table->integer('siswa_id');
-            $table->string('sakit');
-            $table->string('izin');
-            $table->string('alpa');
+            $table->unsignedTinyInteger('sakit')->default(0);
+            $table->unsignedTinyInteger('izin')->default(0);
+            $table->unsignedTinyInteger('alpa')->default(0);
             $table->timestamps();
         });
     }

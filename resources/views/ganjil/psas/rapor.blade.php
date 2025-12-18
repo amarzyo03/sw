@@ -10,7 +10,6 @@
                     </a>
                 </h6>
             </div>
-
         </div>
 
         <div class="card-body">
