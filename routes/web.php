@@ -46,14 +46,14 @@ Route::post('/user-siswa/attemp-login', [userSiswaController::class, 'attempLogi
 Route::middleware(['siswaAuth'])->prefix('user-siswa')->group(function () {
     Route::get('/dashboard', [userSiswaController::class, 'dashboard']);
 
-    Route::get('/show', [userSiswaController::class, 'show']);
+    Route::get('/show', [userSiswaController::class, 'show'])->name('profil-siswa');
     Route::get('/edit', [userSiswaController::class, 'edit']);
     Route::post('/update', [userSiswaController::class, 'update']);
     Route::get('/logout', [userSiswaController::class, 'logout']);
 
     // Nilai Murni PSTS Ganjil
-    Route::get('/ganjil/psts/nilai-murni', [userSiswaController::class, 'ganjil_psts_nilai_murni']);
+    Route::get('/ganjil/psts/nilai-murni', [userSiswaController::class, 'ganjil_psts_nilai_murni'])->name('ganjil-psts-nilai-murni-siswa');
 
     // Rapor PSAS Ganjil
-    Route::get('/ganjil/psas/rapor', [userSiswaController::class, 'ganjil_psas_rapor']);
+    Route::get('/ganjil/psas/rapor', [userSiswaController::class, 'ganjil_psas_rapor'])->name('ganjil-psas-rapor-siswa');
 });

@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\ganjil\psas\raporModel;
 use App\Models\ganjil\psts\nilaiMurniModel;
 use App\Models\nilaiMurniPSTSGanjilModel;
+use App\Models\presensiModel;
 use Illuminate\Http\Request;
 use App\Models\siswaModel;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
@@ -52,7 +54,16 @@ class userSiswaController extends Controller
     {
         $id = session('siswa_id');
         $siswa = siswaModel::findOrFail($id);
-        return view('user-siswa.dashboard', compact('siswa'));
+        $presensi = presensiModel::where('siswa_id', $id)->first();
+
+        $jml_hari = Carbon::create(2025, 7, 7)->diffInDays(Carbon::now());
+        $jml_absen = $presensi->sakit + $presensi->izin + $presensi->alpa;
+        $hadir = $jml_hari - $jml_absen;
+        $persen_hadir = round(($hadir / $jml_hari) * 100, 2);
+
+
+
+        return view('user-siswa.dashboard', compact('siswa', 'presensi', 'persen_hadir'));
     }
 
     public function show() // profil siswa
