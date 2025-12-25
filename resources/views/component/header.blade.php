@@ -4,15 +4,14 @@
             <svg class="icon icon-lg">
                 <use xlink:href="/node_modules/free.svg#cil-menu"></use>
             </svg>
+            X TKJ-2
         </button>
         {{-- <ul class="header-nav d-none d-lg-flex">
-            @if (session()->has('admin_id'))
-                <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Users</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
-            @endif
-        </ul>
-        <ul class="header-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Users</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
+        </ul> --}}
+        {{-- <ul class="header-nav ms-auto">
             <li class="nav-item"><a class="nav-link" href="#">
                     <svg class="icon icon-lg">
                         <use xlink:href="/node_modules/free.svg#cil-bell"></use>
@@ -95,7 +94,7 @@
         </ul>
     </div>
 
-    <div class="container-fluid px-4">
+    <div class="container-fluid px-4 d-none d-md-flex">
         @php
             $segments = request()->segments();
             $url = '';
