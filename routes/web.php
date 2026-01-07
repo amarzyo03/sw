@@ -24,7 +24,11 @@ Route::post('/attemp-login', [authController::class, 'attempLogin']);
 Route::middleware(['adminAuth'])->group(function () {
     Route::resource('dashboard', dashboardController::class); // dashboard
     Route::resource('siswa', siswaController::class); // siswa
-    Route::resource('presensi', presensiController::class); // presensi
+
+
+    // Presensi
+    Route::get('presensi', [presensiController::class, 'index'])->name('presensi.index');
+    Route::get('presensi/edit', [presensiController::class, 'edit'])->name('presensi.edit');
 
     // Nilai Murni PSTS Ganjil
     Route::get('ganjil/psts/nilai-murni', [nilaiMurniController::class, 'index'])->name('nilai-murni-psts');

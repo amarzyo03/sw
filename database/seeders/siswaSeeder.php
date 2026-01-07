@@ -51,6 +51,7 @@ class siswaSeeder extends Seeder
             'ZAKI KADAVI',
             'ZHAKIRA INDAH SEPTIANA',
         ];
+
         $nis = [
             '15568',
             '15569',
@@ -129,6 +130,7 @@ class siswaSeeder extends Seeder
             '0102033060'
 
         ];
+
         $jk = [
             'P',
             'P',
@@ -167,6 +169,7 @@ class siswaSeeder extends Seeder
             'L',
             'P',
         ];
+
         $tempat_lahir = [
             'Cilacap',
             'Cilacap',
@@ -244,7 +247,6 @@ class siswaSeeder extends Seeder
             '2009-11-29',
             '2010-09-28',
         ];
-
 
         $telp   = [
             '082328011305',
@@ -324,22 +326,65 @@ class siswaSeeder extends Seeder
             'Jl. Nuri RT 3/3, Karangsari, Adipala, Cilacap',
         ];
 
+        $anak_ke = [
+            1,
+            2,
+            2,
+            1,
+            2,
+            1,
+            3,
+            2,
+            1,
+            3,
+            1,
+            3,
+            3,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            2,
+            3,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            4,
+            1,
+            1,
+            5,
+            1,
+            2,
+            2,
+            2
+        ];
+
         foreach ($siswa as $nama) {
             DB::table('siswa')->insert([
-                'nis'           => array_shift($nis),
-                'nisn'          => array_shift($nisn),
-                'nama'          => strtolower($nama),
-                'jenis_kelamin' => strtolower(array_shift($jk)),
-                'tempat_lahir'  => strtolower(array_shift($tempat_lahir)),
-                'tanggal_lahir' => strtolower(array_shift($tanggal_lahir)),
-                'agama'         => 'islam',
-                'telp'          => array_shift($telp),
-                'alamat'        => strtolower(array_shift($alamat)),
-                'username'      => strtolower(str_replace(' ', '-', $nama)),
-                'password'      => bcrypt('xtkj2'),
-                'foto'          => null,
-                'created_at'    => now(),
-                'updated_at'    => now(),
+                'nis'               => array_shift($nis),
+                'nisn'              => array_shift($nisn),
+                'nama'              => strtolower($nama),
+                'jenis_kelamin'     => strtolower(array_shift($jk)),
+                'tempat_lahir'      => strtolower(array_shift($tempat_lahir)),
+                'tanggal_lahir'     => strtolower(array_shift($tanggal_lahir)),
+                'agama'             => 'islam',
+                'status_keluarga'   => 'anak kandung',
+                'telp'              => array_shift($telp),
+                'anak_ke'           => array_shift($anak_ke),
+                'alamat'            => strtolower(array_shift($alamat)),
+                'username'          => strtolower(str_replace(' ', '-', $nama)),
+                'password'          => bcrypt('xtkj2'),
+                'foto'              => null,
+                'created_at'        => now(),
+                'updated_at'        => now(),
             ]);
         }
     }
