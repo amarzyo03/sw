@@ -29,6 +29,7 @@ Route::middleware(['adminAuth'])->group(function () {
     // Presensi
     Route::get('presensi', [presensiController::class, 'index'])->name('presensi.index');
     Route::get('presensi/edit', [presensiController::class, 'edit'])->name('presensi.edit');
+    Route::post('presensi/update', [presensiController::class, 'update'])->name('presensi.update');
 
     // Nilai Murni PSTS Ganjil
     Route::get('ganjil/psts/nilai-murni', [nilaiMurniController::class, 'index'])->name('nilai-murni-psts');

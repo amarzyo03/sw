@@ -5,9 +5,10 @@
             <div class="d-flex justify-content-between align-items-center">
                 <h6 class="my-0">Presensi</h6>
                 <h6 class="my-0">
-                    <a href="#" class="btn btn-sm btn-danger text-white" target="_blank">
-                        Export PDF
-                    </a>
+                    <div class="btn-group btn-group-sm" role="group">
+                        <a href="{{ route('presensi.edit') }}" class="btn btn-warning">Edit</a>
+                        <a href="#" class="btn btn-danger">Export PDF</a>
+                    </div>
                 </h6>
             </div>
         </div>
