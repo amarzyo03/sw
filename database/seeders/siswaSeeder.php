@@ -367,6 +367,8 @@ class siswaSeeder extends Seeder
             2
         ];
 
+        $asal_sekolah =
+
         foreach ($siswa as $nama) {
             DB::table('siswa')->insert([
                 'nis'               => array_shift($nis),
