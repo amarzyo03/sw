@@ -40,6 +40,7 @@
                         <small>I: {{ $presensi->izin }}</small>
                         <small>A: {{ $presensi->alpa }}</small>
                     </div>
+                    <small class="text-muted mt-2">Update: {{ $presensi->updated_at }}</small>
                 </div>
             </div>
         </div>
