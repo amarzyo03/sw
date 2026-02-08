@@ -2,9 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use App\Models\siswaModel;
 
 class siswaSeeder extends Seeder
 {
@@ -367,10 +366,8 @@ class siswaSeeder extends Seeder
             2
         ];
 
-        $asal_sekolah =
-
         foreach ($siswa as $nama) {
-            DB::table('siswa')->insert([
+            siswaModel::insert([
                 'nis'               => array_shift($nis),
                 'nisn'              => array_shift($nisn),
                 'nama'              => strtolower($nama),
