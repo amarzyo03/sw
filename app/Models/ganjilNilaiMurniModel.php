@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Models\ganjil\psts;
+namespace App\Models;
 
-use App\Models\siswaModel;
 use Illuminate\Database\Eloquent\Model;
 
-class nilaiMurniModel extends Model
+class ganjilNilaiMurniModel extends Model
 {
-    protected $table        = 'ganjil_psts_nilai_murni';
+    protected $table        = 'ganjil_nilai_murni';
     protected $primaryKey   = 'id';
     protected $guarded      = ['id', 'created_at', 'updated_at'];
 

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ganjil_psas_rapor', function (Blueprint $table) {
+        Schema::create('ganjil_nilai_murni', function (Blueprint $table) {
             $table->id();
             $table->integer('siswa_id');
             $table->string('agm');
@@ -19,13 +19,17 @@ return new class extends Migration
             $table->string('indo');
             $table->string('pjok');
             $table->string('sej');
+            $table->string('sbd');
+            $table->string('jwa');
             $table->string('mtk');
             $table->string('ingg');
             $table->string('info');
             $table->string('pipas');
-            $table->string('ddk');;
+            $table->string('ddk1');
+            $table->string('ddk2');
+            $table->string('ddk3');
+            $table->string('ddk4');
             $table->string('kka');
-            $table->string('jwa');
             $table->string('jml');
             $table->string('rerata');
             $table->string('rank');
@@ -38,6 +42,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ganjil_psas_rapor');
+        Schema::dropIfExists('ganjil_nilai_murni');
     }
 };

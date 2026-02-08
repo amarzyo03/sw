@@ -5,11 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\siswaController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\authController;
-use App\Http\Controllers\dataKelasController;
-use App\Http\Controllers\ganjil\psas\raporController;
-use App\Http\Controllers\ganjil\psts\nilaiMurniController;
-use App\Http\Controllers\ganjil\rapor\nilaiController;
-use App\Http\Controllers\mapelController;
+use App\Http\Controllers\ganjilNilaiMurniController;
+use App\Http\Controllers\ganjilRaporController;
 use App\Http\Controllers\presensiController;
 use App\Http\Controllers\userSiswaController;
 
@@ -32,14 +29,13 @@ Route::middleware(['adminAuth'])->group(function () {
     Route::post('presensi/update', [presensiController::class, 'update'])->name('presensi.update');
 
     // Nilai Murni PSTS Ganjil
-    Route::get('ganjil/psts/nilai-murni', [nilaiMurniController::class, 'index'])->name('nilai-murni-psts');
-    Route::get('ganjil/psts/nilai-murni/export', [nilaiMurniController::class, 'export']);
+    Route::get('ganjil/psts/nilai-murni', [ganjilNilaiMurniController::class, 'index'])->name('nilai-murni-psts');
 
     // Rapor PSAS Ganjil
-    Route::get('ganjil/psas/rapor', [raporController::class, 'index'])->name('rapor-psas');
+    Route::get('ganjil/psas/rapor', [ganjilRaporController::class, 'index'])->name('rapor-psas');
 
     // Logout
-    Route::get('/logout', [authController::class, 'logout']);
+    Route::get('/logout', [authController::class, 'logout'])->name('logout');
 });
 
 

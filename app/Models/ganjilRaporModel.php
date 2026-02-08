@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Models\ganjil\psas;
+namespace App\Models;
 
-use App\Models\siswaModel;
 use Illuminate\Database\Eloquent\Model;
 
-class raporModel extends Model
+class ganjilRaporModel extends Model
 {
-    protected $table        = 'ganjil_psas_rapor';
+    protected $table        = 'ganjil_rapor';
     protected $primaryKey   = 'id';
     protected $guarded      = ['id', 'created_at', 'updated_at'];
 
