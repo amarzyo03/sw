@@ -29,10 +29,10 @@ Route::middleware(['adminAuth'])->group(function () {
     Route::post('presensi/update', [presensiController::class, 'update'])->name('presensi.update');
 
     // Nilai Murni PSTS Ganjil
-    Route::get('ganjil/psts/nilai-murni', [ganjilNilaiMurniController::class, 'index'])->name('nilai-murni-psts');
+    Route::get('ganjil/psts/nilai-murni', [ganjilNilaiMurniController::class, 'index'])->name('ganjil-nilai-murni');
 
     // Rapor PSAS Ganjil
-    Route::get('ganjil/psas/rapor', [ganjilRaporController::class, 'index'])->name('rapor-psas');
+    Route::get('ganjil/psas/rapor', [ganjilRaporController::class, 'index'])->name('ganjil-rapor');
 
     // Logout
     Route::get('/logout', [authController::class, 'logout'])->name('logout');
@@ -45,7 +45,7 @@ Route::get('/user-siswa/login', [userSiswaController::class, 'login']);
 Route::post('/user-siswa/attemp-login', [userSiswaController::class, 'attempLogin']);
 
 Route::middleware(['siswaAuth'])->prefix('user-siswa')->group(function () {
-    Route::get('/dashboard', [userSiswaController::class, 'dashboard']);
+    Route::get('/dashboard', [userSiswaController::class, 'dashboard'])->name('dashboard-siswa');
 
     Route::get('/show', [userSiswaController::class, 'show'])->name('profil-siswa');
     Route::get('/edit', [userSiswaController::class, 'edit']);
@@ -53,8 +53,8 @@ Route::middleware(['siswaAuth'])->prefix('user-siswa')->group(function () {
     Route::get('/logout', [userSiswaController::class, 'logout']);
 
     // Nilai Murni PSTS Ganjil
-    Route::get('/ganjil/psts/nilai-murni', [userSiswaController::class, 'ganjil_psts_nilai_murni'])->name('ganjil-psts-nilai-murni-siswa');
+    Route::get('/ganjil/nilai-murni', [userSiswaController::class, 'ganjil_nilai_murni'])->name('ganjil-nilai-murni-siswa');
 
     // Rapor PSAS Ganjil
-    Route::get('/ganjil/psas/rapor', [userSiswaController::class, 'ganjil_psas_rapor'])->name('ganjil-psas-rapor-siswa');
+    Route::get('/ganjil/rapor', [userSiswaController::class, 'ganjil_rapor'])->name('ganjil-rapor-siswa');
 });

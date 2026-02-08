@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ganjil\psas\raporModel;
-use App\Models\ganjil\psts\nilaiMurniModel;
-use App\Models\nilaiMurniPSTSGanjilModel;
+
+use App\Models\ganjilNilaiMurniModel;
+use App\Models\ganjilRaporModel;
 use App\Models\presensiModel;
 use Illuminate\Http\Request;
 use App\Models\siswaModel;
@@ -113,19 +113,19 @@ class userSiswaController extends Controller
         return redirect()->to('/user-siswa/show');
     }
 
-    public function ganjil_psts_nilai_murni() // nilai murni psts ganjil siswa
+    public function ganjil_nilai_murni() // nilai murni psts ganjil siswa
     {
         $id = session('siswa_id');
         $jml_siswa = siswaModel::count();
-        $data = nilaiMurniModel::where('siswa_id', $id)->get();
+        $data = ganjilNilaiMurniModel::where('siswa_id', $id)->get();
         return view('user-siswa.ganjil_psts_nilai_murni', compact('jml_siswa', 'data'));
     }
 
-    public function ganjil_psas_rapor() // rapor psas ganjil siswa
+    public function ganjil_rapor() // rapor psas ganjil siswa
     {
         $id = session('siswa_id');
         $jml_siswa = siswaModel::count();
-        $data = raporModel::where('siswa_id', $id)->get();
+        $data = ganjilRaporModel::where('siswa_id', $id)->get();
         return view('user-siswa.ganjil_psas_rapor', compact('jml_siswa', 'data'));
     }
 }

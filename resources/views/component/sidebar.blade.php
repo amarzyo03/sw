@@ -13,7 +13,7 @@
 
     <ul class="sidebar-nav" data-coreui="navigation" data-simplebar>
         <li class="nav-item">
-            <a class="nav-link" href="{{ session()->has('admin_id') ? '/dashboard' : (session()->has('siswa_id') ? '/user-siswa/dashboard' : '#') }}">
+            <a class="nav-link" href="{{ session()->has('admin_id') ? route('dashboard.index') : (session()->has('siswa_id') ? route('dashboard-siswa') : '#') }}">
                 <svg class="nav-icon">
                     <use xlink:href="/node_modules/free.svg#cil-speedometer"></use>
                 </svg> Dashboard
@@ -32,7 +32,7 @@
                 </a>
                 <ul class="nav-group-items compact">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ session()->has('admin_id') ? route('nilai-murni-psts') : (session()->has('siswa_id') ? '/user-siswa/ganjil/psts/nilai-murni' : '#') }}">
+                        <a class="nav-link" href="{{ session()->has('admin_id') ? route('ganjil-nilai-murni') : (session()->has('siswa_id') ? route('ganjil-nilai-murni-siswa') : '#') }}">
                             <span class="nav-icon">
                                 <span class="nav-icon-bullet"></span>
                             </span>
@@ -40,7 +40,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ session()->has('admin_id') ? route('rapor-psas') : (session()->has('siswa_id') ? '/user-siswa/ganjil/psas/rapor' : '#') }}">
+                        <a class="nav-link" href="{{ session()->has('admin_id') ? route('ganjil-rapor') : (session()->has('siswa_id') ? route('ganjil-rapor-siswa') : '#') }}">
                             <span class="nav-icon">
                                 <span class="nav-icon-bullet"></span>
                             </span>
