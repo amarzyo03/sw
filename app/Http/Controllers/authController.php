@@ -12,10 +12,10 @@ class authController extends Controller
     public function login()
     {
         if (session()->has('admin_id')) {
-            return redirect()->to('/dashboard');
+            return redirect()->route('dashboard.index');
         }
 
-        return view('auth.login');
+        return view('login');
     }
 
     public function attempLogin(Request $request)
@@ -32,15 +32,15 @@ class authController extends Controller
             Session::put('admin_id', $admin->id);
             Session::put('admin_username', $admin->username);
 
-            return redirect()->to('/dashboard');
+            return redirect()->route('dashboard.index');;
         } else {
-            return redirect()->to('/');
+            return redirect()->route('login');
         }
     }
 
     public function logout()
     {
         Session::flush();
-        return redirect()->to('/');
+        return redirect()->route('login');
     }
 }

@@ -17,7 +17,7 @@ class siswaAuth
     public function handle(Request $request, Closure $next): Response
     {
         if (!Session::has('siswa_id')) {
-            return redirect()->to('/user-siswa/login');
+            return redirect()->route('siswa.login');
         }
 
         return $next($request);

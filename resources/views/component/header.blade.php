@@ -71,7 +71,7 @@
                     <div class="dropdown-header bg-body-tertiary text-body-secondary fw-semibold mb-2">
                         <div class="fw-semibold">Settings</div>
                     </div>
-                    <a class="dropdown-item" href="{{ session()->has('admin_id') ? '#' : (session()->has('siswa_id') ? '/user-siswa/show' : '#') }}">
+                    <a class="dropdown-item" href="{{ session()->has('admin_id') ? '#' : (session()->has('siswa_id') ? route('siswa.show-profil') : '#') }}">
                         <svg class="icon me-2">
                             <use xlink:href="/node_modules/free.svg#cil-user"></use>
                         </svg> Profile
@@ -84,7 +84,7 @@
 
                     <div class="dropdown-divider"></div>
 
-                    <a href="{{ session()->has('admin_id') ? '/logout' : (session()->has('siswa_id') ? '/user-siswa/logout' : '') }}" class="dropdown-item text-danger" href="#">
+                    <a href="{{ session()->has('admin_id') ? route('logout') : (session()->has('siswa_id') ? route('siswa.logout') : '') }}" class="dropdown-item text-danger" href="#">
                         <svg class="icon me-2">
                             <use xlink:href="/node_modules/free.svg#cil-account-logout">
                             </use>

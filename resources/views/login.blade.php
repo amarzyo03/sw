@@ -57,28 +57,26 @@
                             <div class="card-body">
                                 <h1>Login</h1>
                                 <p class="text-body-secondary">Sign In to your account</p>
-                                <form action="/attemp-login" method="post">
+                                <form action="{{ route('attemp-login') }}" method="post">
                                     @csrf
                                     <div class="input-group mb-3"><span class="input-group-text">
                                             <svg class="icon">
                                                 <use xlink:href="/node_modules/free.svg#cil-user">
                                                 </use>
                                             </svg></span>
-                                        <input class="form-control" type="text" name="username"
-                                            placeholder="Username">
+                                        <input class="form-control" type="text" name="username" placeholder="Username">
                                     </div>
                                     <div class="input-group mb-4"><span class="input-group-text">
                                             <svg class="icon">
                                                 <use xlink:href="/node_modules/free.svg#cil-lock-locked">
                                                 </use>
                                             </svg></span>
-                                        <input class="form-control" type="password" name="password"
-                                            placeholder="Password">
+                                        <input class="form-control" type="password" name="password" placeholder="Password">
                                     </div>
                                     <div class="row">
                                         <div class="col-6">
                                             <button class="btn btn-primary px-4" type="submit">Login</button>
-                                            <a href="/user-siswa/login" class="btn btn-success text-white">Login
+                                            <a href="{{ route('siswa.login') }}" class="btn btn-success text-white">Login
                                                 Siswa</a>
                                         </div>
                                         <div class="col-6 text-end">

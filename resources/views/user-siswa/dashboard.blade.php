@@ -7,7 +7,7 @@
             <div>
                 <h5 class="mb-1">{{ ucwords($siswa->nama) }}</h5>
                 <small class="text-muted">
-                    NIS: {{ $siswa->nis }} | NISN: {{ $siswa->nisn }} | <a href="{{ route('profil-siswa') }}" class="text-decoration-none fw-semibold">Detail</a>
+                    NIS: {{ $siswa->nis }} | NISN: {{ $siswa->nisn }} | <a href="{{ route('siswa.show-profil') }}" class="text-decoration-none fw-semibold">Detail</a>
                 </small>
             </div>
         </div>
@@ -49,10 +49,10 @@
                 <div class="card-body d-flex flex-column">
                     <h6 class="text-muted">Penilaian Ganjil</h6>
                     <div class="d-grid gap-2 mt-auto">
-                        <a href="{{ route('ganjil-nilai-murni-siswa') }}" class="btn btn-sm btn-primary">
+                        <a href="{{ route('siswa.ganjil-nilai-murni') }}" class="btn btn-sm btn-primary">
                             PSTS : Nilai Murni
                         </a>
-                        <a href="{{ route('ganjil-rapor-siswa') }}" class="btn btn-sm btn-success text-white">
+                        <a href="{{ route('siswa.ganjil-rapor') }}" class="btn btn-sm btn-success text-white">
                             PSAS : Rapor
                         </a>
                     </div>

@@ -15,46 +15,44 @@ use App\Http\Controllers\userSiswaController;
 // });
 
 ######################### Admin Page ###########################
-Route::get('/', [authController::class, 'login']);
-Route::post('/attemp-login', [authController::class, 'attempLogin']);
+Route::get('/', [authController::class, 'login'])->name('login');
+Route::post('/attemp-login', [authController::class, 'attempLogin'])->name('attemp-login');
+Route::get('/logout', [authController::class, 'logout'])->name('logout');
 
 Route::middleware(['adminAuth'])->group(function () {
     Route::resource('dashboard', dashboardController::class); // dashboard
     Route::resource('siswa', siswaController::class); // siswa
 
 
-    // Presensi
-    Route::get('presensi', [presensiController::class, 'index'])->name('presensi.index');
-    Route::get('presensi/edit', [presensiController::class, 'edit'])->name('presensi.edit');
-    Route::post('presensi/update', [presensiController::class, 'update'])->name('presensi.update');
+    Route::prefix('presensi')->name('presensi.')->group(function () {
+        Route::get('/', [presensiController::class, 'index'])->name('index');
+        Route::get('edit', [presensiController::class, 'edit'])->name('edit');
+        Route::post('update', [presensiController::class, 'update'])->name('update');
+    });
 
-    // Nilai Murni PSTS Ganjil
-    Route::get('ganjil/psts/nilai-murni', [ganjilNilaiMurniController::class, 'index'])->name('ganjil-nilai-murni');
-
-    // Rapor PSAS Ganjil
-    Route::get('ganjil/psas/rapor', [ganjilRaporController::class, 'index'])->name('ganjil-rapor');
-
-    // Logout
-    Route::get('/logout', [authController::class, 'logout'])->name('logout');
+    Route::prefix('ganjil')->name('ganjil-')->group(function () {
+        Route::get('nilai-murni', [ganjilNilaiMurniController::class, 'index'])->name('nilai-murni');
+        Route::get('rapor', [ganjilRaporController::class, 'index'])->name('rapor');
+    });
 });
 
 
-
 ######################## User Siswa Page ########################
-Route::get('/user-siswa/login', [userSiswaController::class, 'login']);
-Route::post('/user-siswa/attemp-login', [userSiswaController::class, 'attempLogin']);
+Route::prefix('ssw')->name('siswa.')->group(function () {
+    Route::get('login', [userSiswaController::class, 'login'])->name('login');
+    Route::post('attemp-login', [userSiswaController::class, 'attempLogin'])->name('attemp-login');
+    Route::get('logout', [userSiswaController::class, 'logout'])->name('logout');
 
-Route::middleware(['siswaAuth'])->prefix('user-siswa')->group(function () {
-    Route::get('/dashboard', [userSiswaController::class, 'dashboard'])->name('dashboard-siswa');
+    Route::middleware(['siswaAuth'])->group(function () {
+        Route::get('dashboard', [userSiswaController::class, 'dashboard'])->name('dashboard');
 
-    Route::get('/show', [userSiswaController::class, 'show'])->name('profil-siswa');
-    Route::get('/edit', [userSiswaController::class, 'edit']);
-    Route::post('/update', [userSiswaController::class, 'update']);
-    Route::get('/logout', [userSiswaController::class, 'logout']);
+        Route::get('show', [userSiswaController::class, 'show'])->name('show-profil');
+        Route::get('edit', [userSiswaController::class, 'edit'])->name('edit-profil');
+        Route::post('update', [userSiswaController::class, 'update'])->name('update-profil');
 
-    // Nilai Murni PSTS Ganjil
-    Route::get('/ganjil/nilai-murni', [userSiswaController::class, 'ganjil_nilai_murni'])->name('ganjil-nilai-murni-siswa');
-
-    // Rapor PSAS Ganjil
-    Route::get('/ganjil/rapor', [userSiswaController::class, 'ganjil_rapor'])->name('ganjil-rapor-siswa');
+        Route::prefix('ganjil')->name('ganjil-')->group(function () {
+            Route::get('nilai-murni', [userSiswaController::class, 'ganjil_nilai_murni'])->name('nilai-murni');
+            Route::get('rapor', [userSiswaController::class, 'ganjil_rapor'])->name('rapor');
+        });
+    });
 });

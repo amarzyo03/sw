@@ -17,7 +17,7 @@ class userSiswaController extends Controller
     public function login()
     {
         if (session()->has('siswa_id')) {
-            return redirect()->to('/user-siswa/dashboard');
+            return redirect()->route('siswa.dashboard');
         }
 
         return view('user-siswa.login');
@@ -37,7 +37,7 @@ class userSiswaController extends Controller
             Session::put('siswa_id', $siswa->id);
             Session::put('siswa_username', $siswa->username);
 
-            return redirect()->to('/user-siswa/dashboard');
+            return redirect()->route('siswa.dashboard');
         } else {
             return back()->with('error', 'Username atau Password salah!');
         }
@@ -46,7 +46,7 @@ class userSiswaController extends Controller
     public function logout()
     {
         Session::forget(['siswa_id', 'siswa_username']);
-        return redirect()->to('/user-siswa/login');
+        return redirect()->route('siswa.login');
     }
 
     // ############################### //
