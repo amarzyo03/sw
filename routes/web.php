@@ -7,6 +7,7 @@ use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\authController;
 use App\Http\Controllers\ganjilNilaiMurniController;
 use App\Http\Controllers\ganjilRaporController;
+use App\Http\Controllers\genapNilaiMurniController;
 use App\Http\Controllers\presensiController;
 use App\Http\Controllers\userSiswaController;
 
@@ -33,6 +34,10 @@ Route::middleware(['adminAuth'])->group(function () {
     Route::prefix('ganjil')->name('ganjil-')->group(function () {
         Route::get('nilai-murni', [ganjilNilaiMurniController::class, 'index'])->name('nilai-murni');
         Route::get('rapor', [ganjilRaporController::class, 'index'])->name('rapor');
+    });
+
+    Route::prefix('genap')->name('genap-')->group(function () {
+        Route::get('nilai-murni', [genapNilaiMurniController::class, 'index'])->name('nilai-murni');
     });
 });
 

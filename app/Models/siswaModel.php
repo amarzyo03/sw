@@ -2,8 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\ganjil\psas\raporModel;
-use App\Models\ganjil\psts\nilaiMurniModel;
 use Illuminate\Database\Eloquent\Model;
 
 class siswaModel extends Model
@@ -12,14 +10,19 @@ class siswaModel extends Model
     protected $primaryKey = 'id';
     protected $guarded = ['id', 'created_at', 'updated_at'];
 
-    public function ganjil_psts_nilai_murni()
+    public function ganjil_nilai_murni()
     {
-        return $this->hasMany(nilaiMurniModel::class, 'siswa_id', 'id');
+        return $this->hasMany(ganjilNilaiMurniModel::class, 'siswa_id', 'id');
     }
 
-    public function ganjil_psas_rapor()
+    public function ganjil_rapor()
     {
-        return $this->hasMany(raporModel::class, 'siswa_id', 'id');
+        return $this->hasMany(ganjilRaporModel::class, 'siswa_id', 'id');
+    }
+
+    public function genap_nilai_murni()
+    {
+        return $this->hasMany(genapNilaiMurniModel::class, 'siswa_id', 'id');
     }
 
     public function presensi()

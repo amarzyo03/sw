@@ -49,6 +49,32 @@
                     </li>
                 </ul>
             </li>
+            <li class="nav-group">
+                <a class="nav-link nav-group-toggle" href="#">
+                    <svg class="nav-icon">
+                        <use xlink:href="/node_modules/free.svg#cil-book"></use>
+                    </svg>
+                    Penilaian Genap
+                </a>
+                <ul class="nav-group-items compact">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ session()->has('admin_id') ? route('genap-nilai-murni') : (session()->has('siswa_id') ? route('siswa.genap-nilai-murni') : '#') }}">
+                            <span class="nav-icon">
+                                <span class="nav-icon-bullet"></span>
+                            </span>
+                            PSTS : Nilai Murni
+                        </a>
+                    </li>
+                    {{-- <li class="nav-item">
+                        <a class="nav-link" href="{{ session()->has('admin_id') ? route('ganjil-rapor') : (session()->has('siswa_id') ? route('siswa.ganjil-rapor') : '#') }}">
+                            <span class="nav-icon">
+                                <span class="nav-icon-bullet"></span>
+                            </span>
+                            PSAS : Rapor
+                        </a>
+                    </li> --}}
+                </ul>
+            </li>
         @endif
 
         {{-- ================= MASTER (ADMIN ONLY) ================= --}}

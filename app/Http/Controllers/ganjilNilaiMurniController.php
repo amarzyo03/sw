@@ -10,6 +10,6 @@ class ganjilNilaiMurniController extends Controller
     public function index()
     {
         $data = ganjilNilaiMurniModel::with('siswa')->get();
-        return view('ganjil.psts.nilai_murni', compact('data'));
+        return view('ganjil.nilai_murni', compact('data'));
     }
 }
