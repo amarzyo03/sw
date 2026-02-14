@@ -25,6 +25,11 @@ class siswaModel extends Model
         return $this->hasMany(genapNilaiMurniModel::class, 'siswa_id', 'id');
     }
 
+    public function genap_rapor()
+    {
+        return $this->hasMany(genapRaporModel::class, 'siswa_id', 'id');
+    }
+
     public function presensi()
     {
         return $this->hasMany(presensiModel::class, 'siswa_id', 'id');

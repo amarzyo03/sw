@@ -10,6 +10,6 @@ class ganjilRaporController extends Controller
     public function index()
     {
         $data = ganjilRaporModel::with('siswa')->get();
-        return view('ganjil.psas.rapor', compact('data'));
+        return view('ganjil.rapor', compact('data'));
     }
 }

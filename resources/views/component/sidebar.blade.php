@@ -65,14 +65,14 @@
                             PSTS : Nilai Murni
                         </a>
                     </li>
-                    {{-- <li class="nav-item">
-                        <a class="nav-link" href="{{ session()->has('admin_id') ? route('ganjil-rapor') : (session()->has('siswa_id') ? route('siswa.ganjil-rapor') : '#') }}">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ session()->has('admin_id') ? route('genap-rapor') : (session()->has('siswa_id') ? route('siswa.genap-rapor') : '#') }}">
                             <span class="nav-icon">
                                 <span class="nav-icon-bullet"></span>
                             </span>
                             PSAS : Rapor
                         </a>
-                    </li> --}}
+                    </li>
                 </ul>
             </li>
         @endif

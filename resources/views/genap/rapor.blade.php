@@ -3,14 +3,13 @@
     <div class="card">
         <div class="card-header">
             <div class="d-flex justify-content-between align-items-center">
-                <h6 class="my-0">Nilai Murni PSTS Genap</h6>
+                <h6 class="my-0">Rapor PSAS Genap</h6>
                 <h6 class="my-0">
                     <a href="/genap/psts/nilai-murni/export" class="btn btn-sm btn-danger text-white" target="_blank">
                         Export PDF
                     </a>
                 </h6>
             </div>
-
         </div>
 
         <div class="card-body">
@@ -20,28 +19,24 @@
                         <tr class="align-middle">
                             <th scope="col" rowspan="2">#</th>
                             <th scope="col" rowspan="2">Nama</th>
-                            <th scope="col" colspan="16">Mata Pelajaran</th>
+                            <th scope="col" colspan="12">Mata Pelajaran</th>
                             <th scope="col" rowspan="2">Jumlah</th>
-                            <th scope="col" rowspan="2">Rerata</th>
+                            <th scope="col" rowspan="2">Rata-rata</th>
                             <th scope="col" rowspan="2">Rank</th>
                         </tr>
                         <tr class="align-middle">
                             <th scope="col">AGM</th>
-                            <th scope="col">PNC</th>
-                            <th scope="col">IND</th>
-                            <th scope="col">PJK</th>
+                            <th scope="col">PANC</th>
+                            <th scope="col">INDO</th>
+                            <th scope="col">PJOK</th>
                             <th scope="col">SEJ</th>
-                            <th scope="col">SBD</th>
-                            <th scope="col">JWA</th>
                             <th scope="col">MTK</th>
-                            <th scope="col">ING</th>
-                            <th scope="col">INF</th>
-                            <th scope="col">PPS</th>
-                            <th scope="col">PDK 1</th>
-                            <th scope="col">PDK 2</th>
-                            <th scope="col">PDK 3</th>
-                            <th scope="col">PDK 4</th>
+                            <th scope="col">INGG</th>
+                            <th scope="col">INFO</th>
+                            <th scope="col">PIPAS</th>
+                            <th scope="col">DDK</th>
                             <th scope="col">KKA</th>
+                            <th scope="col">JWA</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -54,17 +49,13 @@
                                 <td>{{ $row->indo }}</td>
                                 <td>{{ $row->pjok }}</td>
                                 <td>{{ $row->sej }}</td>
-                                <td>{{ $row->sbd }}</td>
-                                <td>{{ $row->jwa }}</td>
-                                <td>{{ $row->mtk }}</td>
                                 <td>{{ $row->ingg }}</td>
                                 <td>{{ $row->info }}</td>
                                 <td>{{ $row->pipas }}</td>
-                                <td>{{ $row->ddk1 }}</td>
-                                <td>{{ $row->ddk2 }}</td>
-                                <td>{{ $row->ddk3 }}</td>
-                                <td>{{ $row->ddk4 }}</td>
+                                <td>{{ $row->ddk }}</td>
                                 <td>{{ $row->kka }}</td>
+                                <td>{{ $row->jwa }}</td>
+                                <td>{{ $row->ddk }}</td>
                                 <td>{{ $row->jml }}</td>
                                 <td>{{ $row->rerata }}</td>
                                 <td>{{ $row->rank }}</td>
