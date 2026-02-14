@@ -76,11 +76,10 @@
                                     <div class="row">
                                         <div class="col-6">
                                             <button class="btn btn-primary px-4" type="submit">Login</button>
-                                            <a href="{{ route('siswa.login') }}" class="btn btn-success text-white">Login
-                                                Siswa</a>
+
                                         </div>
                                         <div class="col-6 text-end">
-                                            <button class="btn btn-link px-0" type="button">Forgot password?</button>
+                                            <a href="{{ route('siswa.login') }}" class="btn btn-link px-0">Login Siswa</a>
                                         </div>
                                     </div>
                                 </form>
