@@ -64,12 +64,12 @@
         <div class="col-md-3 col-6">
             <div class="card h-100 text-center">
                 <div class="card-body d-flex flex-column">
-                    <h6 class="text-muted">Penilaian Genap</h6>
+                    <h6 class="text-muted">Penilaian Ganjil</h6>
                     <div class="d-grid gap-2 mt-auto">
-                        <a href="#" class="btn btn-sm btn-primary">
+                        <a href="{{ route('siswa.genap-nilai-murni') }}" class="btn btn-sm btn-primary">
                             PSTS : Nilai Murni
                         </a>
-                        <a href="#" class="btn btn-sm btn-success text-white">
+                        <a href="{{ route('siswa.genap-rapor') }}" class="btn btn-sm btn-success text-white">
                             PSAS : Rapor
                         </a>
                     </div>

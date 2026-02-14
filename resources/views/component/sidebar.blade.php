@@ -103,7 +103,7 @@
     </ul>
 
     <div class="sidebar-footer border-top d-none d-md-flex">
-        <a href="/logout" class="btn btn-sm btn-danger w-100 text-white">Logout</a>
+        <a href="{{ session()->has('admin_id') ? route('logout') : (session()->has('siswa_id') ? route('siswa.logout') : '') }}" class="btn btn-sm btn-danger w-100 text-white">Logout</a>
     </div>
 
 </div>
