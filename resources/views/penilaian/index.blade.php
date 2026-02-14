@@ -3,9 +3,9 @@
     <div class="card">
         <div class="card-header">
             <div class="d-flex justify-content-between align-items-center">
-                <h6 class="my-0">Nilai Murni PSTS Ganjil</h6>
+                <h6 class="my-0">{{ $title }}</h6>
                 <h6 class="my-0">
-                    <a href="{{ route('ganjil.nilai-murni-export') }}" class="btn btn-sm btn-danger text-white" target="_blank">
+                    <a href="{{ route($link_export) }}" class="btn btn-sm btn-danger text-white" target="_blank">
                         Export PDF
                     </a>
                 </h6>

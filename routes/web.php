@@ -9,6 +9,7 @@ use App\Http\Controllers\ganjilNilaiMurniController;
 use App\Http\Controllers\ganjilRaporController;
 use App\Http\Controllers\genapNilaiMurniController;
 use App\Http\Controllers\genaRaporController;
+use App\Http\Controllers\penilaianController;
 use App\Http\Controllers\presensiController;
 use App\Http\Controllers\userSiswaController;
 
@@ -33,15 +34,15 @@ Route::middleware(['adminAuth'])->group(function () {
     });
 
     Route::prefix('ganjil')->name('ganjil.')->group(function () {
-        Route::get('nilai-murni', [ganjilNilaiMurniController::class, 'index'])->name('nilai-murni');
-        Route::get('nilai-murni/export', [ganjilNilaiMurniController::class, 'export'])->name('nilai-murni-export');
-        Route::get('rapor', [ganjilRaporController::class, 'index'])->name('rapor');
+        Route::get('nilai-murni', [penilaianController::class, 'ganjil_nilai_murni'])->name('nilai-murni');
+        Route::get('nilai-murni/export', [penilaianController::class, 'ganjil_nilai_murni_export'])->name('nilai-murni-export');
+        Route::get('rapor', [penilaianController::class, 'ganjil_rapor'])->name('rapor');
     });
 
     Route::prefix('genap')->name('genap.')->group(function () {
-        Route::get('nilai-murni', [genapNilaiMurniController::class, 'index'])->name('nilai-murni');
-        Route::get('nilai-murni/export', [genapNilaiMurniController::class, 'export'])->name('nilai-murni-export');
-        Route::get('rapor', [genaRaporController::class, 'index'])->name('rapor');
+        Route::get('nilai-murni', [penilaianController::class, 'genap_nilai_murni'])->name('nilai-murni');
+        Route::get('nilai-murni/export', [penilaianController::class, 'genap_nilai_murni_export'])->name('nilai-murni-export');
+        Route::get('rapor', [penilaianController::class, 'genap_rapor'])->name('rapor');
     });
 });
 
@@ -62,6 +63,11 @@ Route::prefix('ssw')->name('siswa.')->group(function () {
         Route::prefix('ganjil')->name('ganjil-')->group(function () {
             Route::get('nilai-murni', [userSiswaController::class, 'ganjil_nilai_murni'])->name('nilai-murni');
             Route::get('rapor', [userSiswaController::class, 'ganjil_rapor'])->name('rapor');
+        });
+
+        Route::prefix('genap')->name('genap-')->group(function () {
+            Route::get('nilai-murni', [userSiswaController::class, 'genap_nilai_murni'])->name('nilai-murni');
+            Route::get('rapor', [userSiswaController::class, 'genap_rapor'])->name('rapor');
         });
     });
 });

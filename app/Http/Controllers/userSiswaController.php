@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 
 use App\Models\ganjilNilaiMurniModel;
 use App\Models\ganjilRaporModel;
+use App\Models\genapNilaiMurniModel;
+use App\Models\genapRaporModel;
 use App\Models\presensiModel;
 use Illuminate\Http\Request;
 use App\Models\siswaModel;
@@ -113,12 +115,44 @@ class userSiswaController extends Controller
         return redirect()->to('/user-siswa/show');
     }
 
+
+    // ############################### //
     public function ganjil_nilai_murni() // nilai murni psts ganjil siswa
     {
         $id = session('siswa_id');
         $jml_siswa = siswaModel::count();
         $data = ganjilNilaiMurniModel::where('siswa_id', $id)->get();
-        return view('user-siswa.ganjil_psts_nilai_murni', compact('jml_siswa', 'data'));
+
+        $judul = 'LAPORAN NILAI MURNI';
+        $penilaian = 'PENILAIAN SUMATIF TENGAH SEMESTER (PSTS) GANJIL';
+        $tahun_ajaran = 'TAHUN AJARAN 2025/2026';
+
+        return view('user-siswa.penilaian', compact(
+            'jml_siswa',
+            'data',
+            'judul',
+            'penilaian',
+            'tahun_ajaran'
+        ));
+    }
+
+    public function genap_nilai_murni() // nilai murni psts ganjil siswa
+    {
+        $id = session('siswa_id');
+        $jml_siswa = siswaModel::count();
+        $data = genapNilaiMurniModel::where('siswa_id', $id)->get();
+
+        $judul = 'LAPORAN NILAI MURNI';
+        $penilaian = 'PENILAIAN SUMATIF TENGAH SEMESTER (PSTS) GENAP';
+        $tahun_ajaran = 'TAHUN AJARAN 2025/2026';
+
+        return view('user-siswa.penilaian', compact(
+            'jml_siswa',
+            'data',
+            'judul',
+            'penilaian',
+            'tahun_ajaran'
+        ));
     }
 
     public function ganjil_rapor() // rapor psas ganjil siswa
@@ -126,6 +160,36 @@ class userSiswaController extends Controller
         $id = session('siswa_id');
         $jml_siswa = siswaModel::count();
         $data = ganjilRaporModel::where('siswa_id', $id)->get();
-        return view('user-siswa.ganjil_psas_rapor', compact('jml_siswa', 'data'));
+
+        $judul = 'RAPOR BAYANGAN';
+        $penilaian = 'PENILAIAN SUMATIF AKHIR SEMESTER (PSAS) GANJIL';
+        $tahun_ajaran = 'TAHUN AJARAN 2025/2026';
+
+        return view('user-siswa.penilaian', compact(
+            'jml_siswa',
+            'data',
+            'judul',
+            'penilaian',
+            'tahun_ajaran'
+        ));
+    }
+
+    public function genap_rapor() // rapor psas genap siswa
+    {
+        $id = session('siswa_id');
+        $jml_siswa = siswaModel::count();
+        $data = genapRaporModel::where('siswa_id', $id)->get();
+
+        $judul = 'RAPOR BAYANGAN';
+        $penilaian = 'PENILAIAN SUMATIF AKHIR SEMESTER (PSAS) GENAP';
+        $tahun_ajaran = 'TAHUN AJARAN 2025/2026';
+
+        return view('user-siswa.penilaian', compact(
+            'jml_siswa',
+            'data',
+            'judul',
+            'penilaian',
+            'tahun_ajaran'
+        ));
     }
 }
