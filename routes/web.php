@@ -32,13 +32,15 @@ Route::middleware(['adminAuth'])->group(function () {
         Route::post('update', [presensiController::class, 'update'])->name('update');
     });
 
-    Route::prefix('ganjil')->name('ganjil-')->group(function () {
+    Route::prefix('ganjil')->name('ganjil.')->group(function () {
         Route::get('nilai-murni', [ganjilNilaiMurniController::class, 'index'])->name('nilai-murni');
+        Route::get('nilai-murni/export', [ganjilNilaiMurniController::class, 'export'])->name('nilai-murni-export');
         Route::get('rapor', [ganjilRaporController::class, 'index'])->name('rapor');
     });
 
-    Route::prefix('genap')->name('genap-')->group(function () {
+    Route::prefix('genap')->name('genap.')->group(function () {
         Route::get('nilai-murni', [genapNilaiMurniController::class, 'index'])->name('nilai-murni');
+        Route::get('nilai-murni/export', [genapNilaiMurniController::class, 'export'])->name('nilai-murni-export');
         Route::get('rapor', [genaRaporController::class, 'index'])->name('rapor');
     });
 });

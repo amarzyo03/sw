@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>PDF - Nilai Murni PSTS Ganjil</title>
+    <title>PDF - Nilai Murni PSTS Genap</title>
 </head>
 
 <style>
@@ -129,7 +129,7 @@
 
             <div class="judul">
                 <h3>LAPORAN NILAI MURNI</h3>
-                <p>PENILAIAN SUMATIF TENGAH SEMESTER (PSTS) GANJIL</p>
+                <p>PENILAIAN SUMATIF TENGAH SEMESTER (PSTS) GENAP</p>
                 <p>TAHUN AJARAN 2025/2026</p>
             </div>
 

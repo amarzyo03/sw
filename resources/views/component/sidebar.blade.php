@@ -32,7 +32,7 @@
                 </a>
                 <ul class="nav-group-items compact">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ session()->has('admin_id') ? route('ganjil-nilai-murni') : (session()->has('siswa_id') ? route('siswa.ganjil-nilai-murni') : '#') }}">
+                        <a class="nav-link" href="{{ session()->has('admin_id') ? route('ganjil.nilai-murni') : (session()->has('siswa_id') ? route('siswa.ganjil-nilai-murni') : '#') }}">
                             <span class="nav-icon">
                                 <span class="nav-icon-bullet"></span>
                             </span>
@@ -40,7 +40,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ session()->has('admin_id') ? route('ganjil-rapor') : (session()->has('siswa_id') ? route('siswa.ganjil-rapor') : '#') }}">
+                        <a class="nav-link" href="{{ session()->has('admin_id') ? route('ganjil.rapor') : (session()->has('siswa_id') ? route('siswa.ganjil-rapor') : '#') }}">
                             <span class="nav-icon">
                                 <span class="nav-icon-bullet"></span>
                             </span>
@@ -58,7 +58,7 @@
                 </a>
                 <ul class="nav-group-items compact">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ session()->has('admin_id') ? route('genap-nilai-murni') : (session()->has('siswa_id') ? route('siswa.genap-nilai-murni') : '#') }}">
+                        <a class="nav-link" href="{{ session()->has('admin_id') ? route('genap.nilai-murni') : (session()->has('siswa_id') ? route('siswa.genap-nilai-murni') : '#') }}">
                             <span class="nav-icon">
                                 <span class="nav-icon-bullet"></span>
                             </span>
@@ -66,7 +66,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ session()->has('admin_id') ? route('genap-rapor') : (session()->has('siswa_id') ? route('siswa.genap-rapor') : '#') }}">
+                        <a class="nav-link" href="{{ session()->has('admin_id') ? route('genap.rapor') : (session()->has('siswa_id') ? route('siswa.genap-rapor') : '#') }}">
                             <span class="nav-icon">
                                 <span class="nav-icon-bullet"></span>
                             </span>
