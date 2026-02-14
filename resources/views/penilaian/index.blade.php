@@ -15,69 +15,127 @@
 
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-sm table-hover table-bordered text-center">
-                    <thead class="text-nowrap">
-                        <tr class="align-middle">
-                            <th scope="col" rowspan="2">#</th>
-                            <th scope="col" rowspan="2">Nama</th>
-                            <th scope="col" colspan="16">Mata Pelajaran</th>
-                            <th scope="col" rowspan="2">Jumlah</th>
-                            <th scope="col" rowspan="2">Rerata</th>
-                            <th scope="col" rowspan="2">Rank</th>
-                        </tr>
-                        <tr class="align-middle">
-                            <th scope="col">AGM</th>
-                            <th scope="col">PNC</th>
-                            <th scope="col">IND</th>
-                            <th scope="col">PJK</th>
-                            <th scope="col">SEJ</th>
-                            <th scope="col">SBD</th>
-                            <th scope="col">JWA</th>
-                            <th scope="col">MTK</th>
-                            <th scope="col">ING</th>
-                            <th scope="col">INF</th>
-                            <th scope="col">PPS</th>
-                            <th scope="col">PDK 1</th>
-                            <th scope="col">PDK 2</th>
-                            <th scope="col">PDK 3</th>
-                            <th scope="col">PDK 4</th>
-                            <th scope="col">KKA</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @forelse ($data as $i => $row)
-                            <tr class="{{ $row->rank == 1 || $row->rank == 2 || $row->rank == 3 ? 'table-success' : '' }}">
-                                <td>{{ $i + 1 }}</td>
-                                <td class="text-nowrap text-start text-capitalize">{{ $row->siswa->nama }}</td>
-                                <td>{{ $row->agm }}</td>
-                                <td>{{ $row->panc }}</td>
-                                <td>{{ $row->indo }}</td>
-                                <td>{{ $row->pjok }}</td>
-                                <td>{{ $row->sej }}</td>
-                                <td>{{ $row->sbd }}</td>
-                                <td>{{ $row->jwa }}</td>
-                                <td>{{ $row->mtk }}</td>
-                                <td>{{ $row->ingg }}</td>
-                                <td>{{ $row->info }}</td>
-                                <td>{{ $row->pipas }}</td>
-                                <td>{{ $row->ddk1 }}</td>
-                                <td>{{ $row->ddk2 }}</td>
-                                <td>{{ $row->ddk3 }}</td>
-                                <td>{{ $row->ddk4 }}</td>
-                                <td>{{ $row->kka }}</td>
-                                <td>{{ $row->jml }}</td>
-                                <td>{{ $row->rerata }}</td>
-                                <td>{{ $row->rank }}</td>
+                @if ($title == 'RAPOR - GANJIL' || $title == 'RAPOR - GENAP')
+                    <table class="table table-sm table-hover table-bordered text-center">
+                        <thead class="text-nowrap">
+                            <tr class="align-middle">
+                                <th scope="col" rowspan="2">#</th>
+                                <th scope="col" rowspan="2">Nama</th>
+                                <th scope="col" colspan="12">Mata Pelajaran</th>
+                                <th scope="col" rowspan="2">Jumlah</th>
+                                <th scope="col" rowspan="2">Rata-rata</th>
+                                <th scope="col" rowspan="2">Rank</th>
                             </tr>
-                        @empty
-                            <tr>
-                                <td colspan="23" class="bg-secondary">
-                                    Tidak ada data
-                                </td>
+                            <tr class="align-middle">
+                                <th scope="col">AGM</th>
+                                <th scope="col">PANC</th>
+                                <th scope="col">INDO</th>
+                                <th scope="col">PJOK</th>
+                                <th scope="col">SEJ</th>
+                                <th scope="col">MTK</th>
+                                <th scope="col">INGG</th>
+                                <th scope="col">INFO</th>
+                                <th scope="col">PIPAS</th>
+                                <th scope="col">DDK</th>
+                                <th scope="col">KKA</th>
+                                <th scope="col">JWA</th>
                             </tr>
-                        @endforelse
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            @forelse ($data as $i => $row)
+                                <tr class="{{ $row->rank == 1 || $row->rank == 2 || $row->rank == 3 ? 'table-success' : '' }}">
+                                    <td>{{ $i + 1 }}</td>
+                                    <td class="text-nowrap text-start text-capitalize">{{ $row->siswa->nama }}</td>
+                                    <td>{{ $row->agm }}</td>
+                                    <td>{{ $row->panc }}</td>
+                                    <td>{{ $row->indo }}</td>
+                                    <td>{{ $row->pjok }}</td>
+                                    <td>{{ $row->sej }}</td>
+                                    <td>{{ $row->ingg }}</td>
+                                    <td>{{ $row->info }}</td>
+                                    <td>{{ $row->pipas }}</td>
+                                    <td>{{ $row->ddk }}</td>
+                                    <td>{{ $row->kka }}</td>
+                                    <td>{{ $row->jwa }}</td>
+                                    <td>{{ $row->ddk }}</td>
+                                    <td>{{ $row->jml }}</td>
+                                    <td>{{ $row->rerata }}</td>
+                                    <td>{{ $row->rank }}</td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="23" class="bg-secondary">
+                                        Tidak ada data
+                                    </td>
+                                </tr>
+                            @endforelse
+                        </tbody>
+                    </table>
+                @else
+                    <table class="table table-sm table-hover table-bordered text-center">
+                        <thead class="text-nowrap">
+                            <tr class="align-middle">
+                                <th scope="col" rowspan="2">#</th>
+                                <th scope="col" rowspan="2">Nama</th>
+                                <th scope="col" colspan="16">Mata Pelajaran</th>
+                                <th scope="col" rowspan="2">Jumlah</th>
+                                <th scope="col" rowspan="2">Rerata</th>
+                                <th scope="col" rowspan="2">Rank</th>
+                            </tr>
+                            <tr class="align-middle">
+                                <th scope="col">AGM</th>
+                                <th scope="col">PNC</th>
+                                <th scope="col">IND</th>
+                                <th scope="col">PJK</th>
+                                <th scope="col">SEJ</th>
+                                <th scope="col">SBD</th>
+                                <th scope="col">JWA</th>
+                                <th scope="col">MTK</th>
+                                <th scope="col">ING</th>
+                                <th scope="col">INF</th>
+                                <th scope="col">PPS</th>
+                                <th scope="col">PDK 1</th>
+                                <th scope="col">PDK 2</th>
+                                <th scope="col">PDK 3</th>
+                                <th scope="col">PDK 4</th>
+                                <th scope="col">KKA</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @forelse ($data as $i => $row)
+                                <tr class="{{ $row->rank == 1 || $row->rank == 2 || $row->rank == 3 ? 'table-success' : '' }}">
+                                    <td>{{ $i + 1 }}</td>
+                                    <td class="text-nowrap text-start text-capitalize">{{ $row->siswa->nama }}</td>
+                                    <td>{{ $row->agm }}</td>
+                                    <td>{{ $row->panc }}</td>
+                                    <td>{{ $row->indo }}</td>
+                                    <td>{{ $row->pjok }}</td>
+                                    <td>{{ $row->sej }}</td>
+                                    <td>{{ $row->sbd }}</td>
+                                    <td>{{ $row->jwa }}</td>
+                                    <td>{{ $row->mtk }}</td>
+                                    <td>{{ $row->ingg }}</td>
+                                    <td>{{ $row->info }}</td>
+                                    <td>{{ $row->pipas }}</td>
+                                    <td>{{ $row->ddk1 }}</td>
+                                    <td>{{ $row->ddk2 }}</td>
+                                    <td>{{ $row->ddk3 }}</td>
+                                    <td>{{ $row->ddk4 }}</td>
+                                    <td>{{ $row->kka }}</td>
+                                    <td>{{ $row->jml }}</td>
+                                    <td>{{ $row->rerata }}</td>
+                                    <td>{{ $row->rank }}</td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="23" class="bg-secondary">
+                                        Tidak ada data
+                                    </td>
+                                </tr>
+                            @endforelse
+                        </tbody>
+                    </table>
+                @endif
             </div>
         </div>
     </div>
