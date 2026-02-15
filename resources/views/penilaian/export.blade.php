@@ -225,55 +225,55 @@
                     </tr>
 
                     <tr>
-                        <td>1.</td>
+                        <td class="tg-9wq8">1.</td>
                         <td colspan="3">Matematika</td>
                         <td class="tg-9wq8">{{ $row->mtk }}</td>
                         <td colspan="3">Remedial</td>
                     </tr>
                     <tr>
-                        <td>2.</td>
+                        <td class="tg-9wq8">2.</td>
                         <td colspan="3">Bahasa Inggris</td>
                         <td class="tg-9wq8">{{ $row->ingg }}</td>
                         <td colspan="3">Remedial</td>
                     </tr>
                     <tr>
-                        <td>3.</td>
+                        <td class="tg-9wq8">3.</td>
                         <td colspan="3">Informatika</td>
                         <td class="tg-9wq8">{{ $row->info }}</td>
                         <td colspan="3">Tuntas</td>
                     </tr>
                     <tr>
-                        <td>4.</td>
+                        <td class="tg-9wq8">4.</td>
                         <td colspan="3">Projek IPAS</td>
                         <td class="tg-9wq8">{{ $row->pipas }}</td>
                         <td colspan="3">Remedial</td>
                     </tr>
                     <tr>
-                        <td>5.</td>
+                        <td class="tg-9wq8">5.</td>
                         <td colspan="3">Profesi & Kewirausahaan TJKT</td>
                         <td class="tg-9wq8">{{ $row->ddk1 }}</td>
                         <td colspan="3">Remedial</td>
                     </tr>
                     <tr>
-                        <td>6.</td>
+                        <td class="tg-9wq8">6.</td>
                         <td colspan="3">Dasar-dasar TJKT</td>
                         <td class="tg-9wq8">{{ $row->ddk2 }}</td>
                         <td colspan="3">Remedial</td>
                     </tr>
                     <tr>
-                        <td>7.</td>
+                        <td class="tg-9wq8">7.</td>
                         <td colspan="3">Media & Jaringan Telekomunikasi</td>
                         <td class="tg-9wq8">{{ $row->ddk3 }}</td>
                         <td colspan="3">Remedial</td>
                     </tr>
                     <tr>
-                        <td>8.</td>
+                        <td class="tg-9wq8">8.</td>
                         <td colspan="3">Proses Bisnis TJKT</td>
                         <td class="tg-9wq8">{{ $row->ddk4 }}</td>
                         <td colspan="3">Remedial</td>
                     </tr>
                     <tr>
-                        <td>9.</td>
+                        <td class="tg-9wq8">9.</td>
                         <td colspan="3">Koding & Kecerdasan Artifisial</td>
                         <td class="tg-9wq8">{{ $row->kka }}</td>
                         <td colspan="3">Remedial</td>
@@ -315,6 +315,8 @@
                 </tr>
                 <tr>
                     <td colspan="2">
+                        <i>Mengetahui,</i>
+                        <br class="my-0">
                         Kepala Sekolah
                         <div class="ttd-space"></div>
                         <strong><u>YUDIANTORO, SE</u></strong>

@@ -14,13 +14,15 @@ class penilaianController extends Controller
     // Penilaian nilai murni ganjil
     public function ganjil_nilai_murni()
     {
-        $title = 'NILAI MURNI - GANJIL';
+        $title = 'NILAI MURNI';
+        $smt = 'GANJIL';
         $link_export = 'ganjil.nilai-murni-export';
         $data = ganjilNilaiMurniModel::with('siswa')->get();
 
         return view('penilaian.index', compact(
             'data',
             'title',
+            'smt',
             'link_export'
         ));
     }
@@ -40,13 +42,15 @@ class penilaianController extends Controller
     // Penilaian nilai murni genap
     public function genap_nilai_murni()
     {
-        $title = 'NILAI MURNI - GENAP';
+        $title = 'NILAI MURNI';
+        $smt = 'GENAP';
         $link_export = 'genap.nilai-murni-export';
         $data = genapNilaiMurniModel::with('siswa')->get();
 
         return view('penilaian.index', compact(
             'data',
             'title',
+            'smt',
             'link_export'
         ));
 
@@ -68,26 +72,30 @@ class penilaianController extends Controller
     // Penilaian rapor ganjil
     public function ganjil_rapor()
     {
-        $title = 'RAPOR - GANJIL';
+        $title = 'RAPOR';
+        $smt = 'GANJIL';
         $link_export = 'ganjil.rapor';
         $data = ganjilRaporModel::with('siswa')->get();
 
         return view('penilaian.index', compact(
             'data',
             'title',
+            'smt',
             'link_export'
         ));
     }
 
     public function genap_rapor()
     {
-        $title = 'RAPOR - GENAP';
+        $title = 'RAPOR';
+        $smt = 'GENAP';
         $link_export = 'genap.rapor';
         $data = genapRaporModel::with('siswa')->get();
 
         return view('penilaian.index', compact(
             'data',
             'title',
+            'smt',
             'link_export'
         ));
     }

@@ -15,7 +15,7 @@
 
         <div class="card-body">
             <div class="table-responsive">
-                @if ($title == 'RAPOR - GANJIL' || $title == 'RAPOR - GENAP')
+                @if ($title == 'RAPOR' || $title == 'RAPOR - ')
                     <table class="table table-sm table-hover table-bordered text-center">
                         <thead class="text-nowrap">
                             <tr class="align-middle">
